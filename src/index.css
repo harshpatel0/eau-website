@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "Glacial Interdifference";
+  src: url("fonts/GlacialIndifference-Bold.otf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Glacial Interdifference";
+}
+
+:root {
+  /* CSS HEX */
+  --eerie-black: #1f1f1fff;
+  --caribbean-current: #3c6e71ff;
+  --surface: #f5f5f5ff;
+  --highlighted: #d9d9d9ff;
+  --carmine: #9a031eff;
+
+  background-color: white;
+}
+
+/* :root {
+  --eerie-black: #1f1f1fff;
+  --caribbean-current: #3c6e71ff;
+  --surface: #2e2e2e;
+  --highlighted: #d9d9d9ff;
+  --carmine: #9a031eff;
+
+  background-color: black;
+} */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: 100dvh;
+  background-color: var(--surface);
+
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+nav > .icons {
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+nav > .icons:hover {
+  background-color: var(--highlighted-light);
+}
+
+nav > .theme-selector {
+  align-self: flex-end;
+}
+
+.hero-section {
+  margin-left: 4rem;
+  width: 90vw;
+  height: 100vh;
+  background-image: url(assets/images/SunkenSwamp.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: all 1s;
+}
+
+.hero-section:hover {
+  backdrop-filter: blur(10px);
+}
+
+.hero-text {
+  position: relative;
+  top: 60%;
+  left: 3rem;
+  color: var(--surface);
+  font-size: 6rem;
+}
+
+.hero-p {
+  font-size: 3rem;
+  margin-top: 10px;
+}
