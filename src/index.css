@@ -18,6 +18,7 @@
   --carmine: #9a031eff;
 
   background-color: white;
+  scroll-behavior: smooth;
 }
 
 /* :root {
@@ -42,7 +43,9 @@ nav {
   flex-direction: column;
   gap: 4px;
   backdrop-filter: blur(1000px);
-  z-index: 1;
+  z-index: 2;
+  transition: all 0.5s;
+  overflow: hidden;
 }
 
 nav > .icons {
@@ -55,22 +58,27 @@ nav > .icons:hover {
   cursor: pointer;
 }
 
-nav > .theme-selector {
-  align-self: flex-end;
+main {
+  display: flex;
+  overflow-x: auto; /* Allows horizontal scrolling if needed */
+  gap: 1rem; /* Space between items */
+  flex-shrink: 0;
 }
 
 .hero-section {
-  width: 90vw;
-  height: 98.1vh;
+  min-width: 90vw;
+  height: 98.1dvh;
+
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   transition: all 1s;
   overflow: hidden;
+  scroll-snap-type: x mandatory;
 }
 
 .hero-section:hover {
-  backdrop-filter: blur(100000px);
+  cursor: pointer;
 }
 
 .hero-text {
@@ -79,6 +87,11 @@ nav > .theme-selector {
   left: 3rem;
   color: var(--surface);
   margin-left: 4rem;
+  z-index: 1;
+}
+
+.hero-link {
+  font-size: 1rem;
 }
 
 .hero-header {
@@ -97,7 +110,51 @@ nav > .theme-selector {
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 90vw 90vw 90vw;
-  gap: 1rem;
+  display: flex;
+  overflow-x: auto; /* Allows horizontal scrolling if needed */
+  gap: 1rem; /* Space between items */
+  flex-shrink: 0;
+}
+
+.location-heading {
+  position: fixed;
+  padding: 1rem;
+  font-size: 0.75rem;
+  backdrop-filter: blur(1000px);
+  color: whitesmoke;
+  font-weight: bold;
+  left: 6rem;
+  top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero-content {
+    gap: 0.5rem;
+  }
+  .hero-section {
+    min-width: 96vw;
+    height: 100vh;
+  }
+  .hero-text {
+    overflow: visible;
+  }
+}
+
+.all-articles {
+  min-width: 90vw;
+  height: 98.1dvh;
+  transition: all 1s;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+  background-color: #f0f0f0;
+  color: var(--eerie-black);
+}
+
+.articles-list {
+  margin-top: 8rem;
+  margin-left: 5rem;
+}
+
+.articles-list-item {
+  padding: 1rem;
 }
