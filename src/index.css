@@ -36,11 +36,13 @@ nav {
   left: 0;
   width: 4rem;
   height: 100dvh;
-  background-color: var(--surface);
+  /* background-color: var(--surface); */
 
   display: flex;
   flex-direction: column;
   gap: 4px;
+  backdrop-filter: blur(3px);
+  z-index: 1;
 }
 
 nav > .icons {
@@ -50,6 +52,7 @@ nav > .icons {
 
 nav > .icons:hover {
   background-color: var(--highlighted-light);
+  cursor: pointer;
 }
 
 nav > .theme-selector {
@@ -57,29 +60,45 @@ nav > .theme-selector {
 }
 
 .hero-section {
-  margin-left: 4rem;
   width: 90vw;
-  height: 100vh;
+  height: 98.1vh;
   background-image: url(assets/images/SunkenSwamp.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   transition: all 1s;
+  overflow: hidden;
 }
 
 .hero-section:hover {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(100000px);
 }
 
 .hero-text {
   position: relative;
-  top: 60%;
+  top: 58%;
   left: 3rem;
   color: var(--surface);
+  margin-left: 4rem;
+}
+
+.hero-header {
+  top: 20%;
   font-size: 6rem;
 }
 
 .hero-p {
   font-size: 3rem;
   margin-top: 10px;
+}
+
+.hero-author {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 90vw 90vw 90vw;
+  gap: 1rem;
 }

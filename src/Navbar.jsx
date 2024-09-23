@@ -11,7 +11,7 @@ function Navbar(props) {
     <nav className="navbar">
       <IconContext.Provider
         value={{
-          color: "black",
+          color: "white",
           size: 32,
           weight: "regular",
           mirrored: false,
@@ -22,7 +22,7 @@ function Navbar(props) {
         {props.darkMode ? (
           <Sun className="icons theme-selector" />
         ) : (
-          <MoonStars className="icons theme-selector" size={32} />
+          <MoonStars className="icons theme-selector" />
         )}
       </IconContext.Provider>
     </nav>
