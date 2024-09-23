@@ -17,8 +17,8 @@ function Navbar(props) {
           mirrored: false,
         }}
       >
-        <House className="icons" />
-        <Article className="icons" />
+        <House alt="Home" className="icons" />
+        <Article alt="All Articles" className="icons" />
         {props.darkMode ? (
           <Sun className="icons theme-selector" />
         ) : (
