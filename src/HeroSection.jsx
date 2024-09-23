@@ -10,7 +10,7 @@ function HeroSection(props) {
       style={{ backgroundImage: `url(${props.image})` }}
       className="hero-section"
     >
-      <h1 className="hero-text hero-header">Featured Article</h1>
+      <h1 className="hero-text hero-link">Click to read</h1>
       <p className="hero-text hero-p">{props.title}</p>
       <p className="hero-text hero-author">
         <UserCircle
