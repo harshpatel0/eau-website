@@ -1,8 +1,15 @@
 import { UserCircle } from "@phosphor-icons/react";
+import { useEffect } from "react";
 
 function HeroSection(props) {
+  useEffect(() => {
+    console.log(props);
+  }, []);
   return (
-    <section style={{ backgroundImage: props.image }} className="hero-section">
+    <section
+      style={{ backgroundImage: `url(${props.image})` }}
+      className="hero-section"
+    >
       <h1 className="hero-text hero-header">Featured Article</h1>
       <p className="hero-text hero-p">{props.title}</p>
       <p className="hero-text hero-author">

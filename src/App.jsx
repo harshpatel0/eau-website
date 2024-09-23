@@ -20,6 +20,11 @@ function App() {
           author="John from Crashed!"
           image={SunkenShipBackgroundImage}
         />
+        <HeroSection
+          title="Waves"
+          author="Mary from Snapped!"
+          image={SunkenShipBackgroundImage}
+        />
       </div>
     </>
   );

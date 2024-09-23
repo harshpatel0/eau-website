@@ -41,7 +41,7 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  backdrop-filter: blur(3px);
+  backdrop-filter: blur(1000px);
   z-index: 1;
 }
 
@@ -62,7 +62,6 @@ nav > .theme-selector {
 .hero-section {
   width: 90vw;
   height: 98.1vh;
-  background-image: url(assets/images/SunkenSwamp.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
