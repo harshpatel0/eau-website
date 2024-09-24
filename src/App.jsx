@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
 import Navbar from "./Navbar.jsx";
@@ -14,14 +14,18 @@ import NewYork from "./assets/images/NewYork.jpg";
 function App() {
   const [darkMode, setDarkMode] = useState(false);
 
-  const { ref, inView } = useInView({
-    threshold: 0.5,
+  const { ref, inView: inAllArticles } = useInView({
+    threshold: 0.1,
   });
+
   // This state variable is used to tell if the hero sections are visible, if all hero sections are not visible anymore, then we will set it to false
   return (
     <>
       <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <Heading headerText={inView ? "Featured Articles" : "All Articles"} />
+      <Heading
+        headerText={inAllArticles ? "Featured Articles" : "All Articles"}
+        inAllArticles={inAllArticles}
+      />
       <main className="flex-container">
         <div ref={ref} className="hero-content">
           <HeroSection
@@ -40,7 +44,7 @@ function App() {
             image={NewYork}
           />
         </div>
-        <AllArticles />
+        <AllArticles ref={ref} />
       </main>
     </>
   );
