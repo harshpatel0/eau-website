@@ -7,6 +7,10 @@ import {
 } from "@phosphor-icons/react";
 
 function Navbar(props) {
+  function toggleTheme() {
+    props.setDarkMode(!props.darkMode);
+  }
+
   return (
     <nav className="navbar">
       <IconContext.Provider
@@ -20,9 +24,9 @@ function Navbar(props) {
         <House alt="Home" className="icons" />
         <Article alt="All Articles" className="icons" />
         {props.darkMode ? (
-          <Sun className="icons theme-selector" />
+          <Sun onClick={toggleTheme} className="icons theme-selector" />
         ) : (
-          <MoonStars className="icons theme-selector" />
+          <MoonStars onClick={toggleTheme} className="icons theme-selector" />
         )}
       </IconContext.Provider>
     </nav>

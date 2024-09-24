@@ -1,5 +1,6 @@
 import { UserCircle } from "@phosphor-icons/react";
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 
 function HeroSection(props) {
   useEffect(() => {
@@ -26,3 +27,9 @@ function HeroSection(props) {
 }
 
 export default HeroSection;
+
+HeroSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};
