@@ -1,11 +1,149 @@
+/* Adding Glacial Interdifference Font Family */
 @font-face {
   font-family: "Glacial Interdifference";
-  src: url("fonts/GlacialIndifference-Bold.otf");
+  src: url("fonts/GlacialInterdifference/GlacialIndifference-Regular.otf");
+  font-weight: normal;
 }
+
+@font-face {
+  font-family: "Glacial Interdifference";
+  src: url("fonts/GlacialInterdifference/GlacialIndifference-Bold.otf");
+  font-weight: bold;
+}
+
+/* Adding Poppins Font Family */
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 100;
+  src: url("fonts/Poppins/Poppins-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 100;
+  src: url("fonts/Poppins/Poppins-ExtraLightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 200;
+  src: url("fonts/Poppins/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 200;
+  src: url("fonts/Poppins/Poppins-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/Poppins/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 300;
+  src: url("fonts/Poppins/Poppins-ThinItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  src: url("fonts/Poppins/Poppins-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 500;
+  src: url("fonts/Poppins/Poppins-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: url("fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 600;
+  src: url("fonts/Poppins/Poppins-SemiBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 700;
+  src: url("fonts/Poppins/Poppins-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  src: url("fonts/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 800;
+  src: url("fonts/Poppins/Poppins-ExtraBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/Poppins/Poppins-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 900;
+  src: url("fonts/Poppins/Poppins-BlackItalic.ttf") format("truetype");
+}
+
+/* End of Fonts */
 
 * {
   padding: 0;
   margin: 0;
+  /* font-family: "Poppins"; */
   font-family: "Glacial Interdifference";
 }
 
@@ -93,6 +231,7 @@ nav > .icons:hover {
   left: 6rem;
   top: 20px;
   transition: all 1s;
+  font-weight: normal;
 }
 
 main {
@@ -144,6 +283,7 @@ main {
   color: var(--surface);
   margin-left: 3rem;
   z-index: 1;
+  font-weight: bold;
 
   overflow-wrap: break-word; /* Updated property to handle long text wrapping */
   word-wrap: break-word; /* Allow long words to break and wrap */
@@ -201,6 +341,8 @@ main {
 .articles-list-item {
   padding: 1rem;
   scroll-snap-align: center;
+  font-weight: normal;
+  transition: all 2s;
 }
 .articles-list-item > h2 {
   font-size: 1.5rem;
@@ -210,12 +352,15 @@ main {
 }
 
 .articles-list-item:hover {
-  border-bottom: 2px solid var(--caribbean-current);
+  border-bottom: 4px solid var(--caribbean-current);
 }
 
 @media screen and (max-width: 600px) {
+  * {
+    scroll-behavior: smooth;
+  }
   .hero-p {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .hero-author {
@@ -227,6 +372,10 @@ main {
   }
 
   .hero-section {
+    background-size: cover;
+  }
+  .hero-section:hover {
+    cursor: pointer;
     background-size: cover;
   }
   .articles-list-item > h2 {
