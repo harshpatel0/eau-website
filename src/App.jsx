@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 
-import Navbar from "./Navbar.jsx";
-import HeroSection from "./HeroSection.jsx";
-import Heading from "./Heading.jsx";
-import AllArticles from "./AllArticles.jsx";
+import Navbar from "./components/Navbar.jsx";
+import HeroSection from "./components/HeroSection.jsx";
+import Heading from "./components/Heading.jsx";
+import AllArticles from "./components/AllArticles.jsx";
 import "./App.css";
 
 import SunkenShipBackgroundImage from "./assets/images/SunkenSwamp.jpg";

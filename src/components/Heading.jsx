@@ -18,16 +18,7 @@ function Heading(props) {
   };
 
   return (
-    <div
-      // style={{
-      //   color:
-      //     props.inFeaturedArticles || props.darkMode
-      //       ? "whitesmoke"
-      //       : "#1f1f1fff",
-      // }}
-      style={styles}
-      className="location-heading"
-    >
+    <div style={styles} className="location-heading">
       <h1>{props.headerText}</h1>
     </div>
   );
