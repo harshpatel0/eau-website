@@ -33,9 +33,3 @@ HeroSection.propTypes = {
   author: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
 };
-
-Heading.defaultProps = {
-  title: "No title",
-  author: "Please fix",
-  image: "",
-};

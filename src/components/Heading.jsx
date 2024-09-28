@@ -31,9 +31,3 @@ Heading.propTypes = {
   inFeaturedArticles: PropTypes.bool.isRequired,
   darkMode: PropTypes.bool.isRequired,
 };
-
-Heading.defaultProps = {
-  headerText: "No Header Text Specified",
-  inFeaturedArticles: false,
-  darkMode: false,
-};
