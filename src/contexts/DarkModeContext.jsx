@@ -22,7 +22,7 @@ export const DarkModeProvider = ({ children }) => {
   }
 
   function toggleTheme() {
-    setDarkMode((d) => !darkMode);
+    setDarkMode((d) => !d);
   }
 
   const [darkMode, setDarkMode] = useState(
