@@ -30,7 +30,16 @@ export const DarkModeProvider = ({ children }) => {
   );
 
   useEffect(() => {
+    // Set in LocalStorage
     window.localStorage.setItem("darkMode", JSON.stringify(darkMode));
+
+    if (darkMode == true) {
+      document.getElementById("body-element").classList.add("app-dark");
+      document.getElementById("body-element").classList.remove("app-light");
+    } else {
+      document.getElementById("body-element").classList.add("app-light");
+      document.getElementById("body-element").classList.remove("app-dark");
+    }
   }, [darkMode]);
 
   return (

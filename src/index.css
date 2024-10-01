@@ -146,3 +146,12 @@
   /* font-family: "Poppins"; */
   font-family: "Glacial Interdifference";
 }
+
+.app-light {
+  background-color: rgb(246, 246, 246);
+  color: black;
+}
+.app-dark {
+  background-color: rgb(12, 12, 12);
+  color: white;
+}
