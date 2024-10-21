@@ -138,20 +138,53 @@
   src: url("fonts/Poppins/Poppins-BlackItalic.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/SpaceMono/SpaceMono-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  src: url("fonts/Jost/Jost-VariableFont_wght.ttf")
+    format("truetype-variations");
+}
+
+@font-face {
+  font-family: "Jost";
+  font-style: italic;
+  src: url("fonts/Jost/Jost-Italic-VariableFont_wght.ttf")
+    format("truetype-variations");
+}
 /* End of Fonts */
 
 * {
   padding: 0;
   margin: 0;
   /* font-family: "Poppins"; */
-  font-family: "Glacial Interdifference";
+  /* font-family: "Glacial Interdifference"; */
+  font-family: "Jost";
+}
+
+:root {
+  /* CSS HEX */
+  --eerie-black: #1f1f1fff;
+  --caribbean-current: #3c6e71ff;
+  --surface: #f5f5f5ff;
+  --highlighted: #d9d9d9ff;
+  --carmine: #9a031eff;
+
+  --background-dark: rgb(28, 28, 28);
+  --background-light: rgb(246, 246, 246);
 }
 
 .app-light {
-  background-color: rgb(246, 246, 246);
+  background-color: var(--background-light);
   color: black;
 }
 .app-dark {
-  background-color: rgb(12, 12, 12);
+  background-color: var(--background-dark);
   color: white;
 }
