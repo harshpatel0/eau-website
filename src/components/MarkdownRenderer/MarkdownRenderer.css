@@ -1,0 +1,60 @@
+pre {
+  padding-left: 1rem;
+
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+code {
+  font-family: "Space Mono";
+}
+
+a {
+  color: var(--eau-purple);
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+a:hover {
+  border-bottom: 1px solid var(--eau-purple-dark);
+  color: var(--eau-purple-dark);
+}
+
+blockquote {
+  padding-left: 0.5rem;
+  border-left: 3px solid #a9a9a9;
+  margin-left: 1rem;
+}
+
+li {
+  list-style-position: inside; /* Moves the marker inside the list item */
+}
+
+table,
+th,
+td {
+  border-collapse: collapse;
+  padding: 0.25rem 0.5rem;
+}
+
+.markdown-generated-image {
+  width: 75%;
+  background-size: center;
+  margin: 0 10%;
+}
+
+.markdownrenderer {
+  margin-left: 12rem;
+  margin-right: 12rem;
+  margin-top: 8rem;
+  transition: all 0.5s;
+  line-height: 2;
+}
+
+@media screen and (max-width: 600px) {
+  .markdownrenderer {
+    margin-left: 5rem;
+    margin-right: 2.5rem;
+  }
+}
