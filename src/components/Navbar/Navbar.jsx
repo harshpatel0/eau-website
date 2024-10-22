@@ -7,6 +7,8 @@ import {
   TestTube,
 } from "@phosphor-icons/react";
 
+import "./Navbar.css";
+
 import { Link } from "react-router-dom";
 
 function Navbar(props) {
@@ -14,7 +16,7 @@ function Navbar(props) {
     <nav className="navbar">
       <IconContext.Provider
         value={{
-          color: "white",
+          color: props.darkMode ? "white" : "black",
           size: 32,
           weight: "regular",
           mirrored: false,
@@ -43,7 +45,7 @@ function Navbar(props) {
         )}
 
         <div className="icons">
-          <Link to="/testpage">
+          <Link to="/uniondispatch/testpage">
             <TestTube
               className="icons"
               alt="Go to test page, nothing cool there, just testing stuff"

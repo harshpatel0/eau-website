@@ -3,24 +3,31 @@ import React, { useState, useEffect, useRef, useContext } from "react";
 import { useInView } from "react-intersection-observer";
 
 // Components
-import Navbar from "../components/Navbar.jsx";
-import HeroSection from "../components/HeroSection.jsx";
-import Heading from "../components/Heading.jsx";
-import AllArticles from "../components/AllArticles.jsx";
-import "../App.css";
+import Navbar from "../../components/Navbar/Navbar.jsx";
+import HeroSection from "../../components/HeroSection.jsx";
+import Heading from "../../components/Heading/Heading.jsx";
+import AllArticles from "../../components/AllArticles.jsx";
+import "../../App.css";
+import "./style.css";
 
 // Other Assets
-import SunkenShipBackgroundImage from "../assets/images/SunkenSwamp.jpg";
-import Crashed from "../assets/images/Crashed.jpg";
-import NewYork from "../assets/images/NewYork.jpg";
+import SunkenShipBackgroundImage from "../../assets/images/SunkenSwamp.jpg";
+import Crashed from "../../assets/images/Crashed.jpg";
+import NewYork from "../../assets/images/NewYork.jpg";
 
 // Contexts
-import { DarkModeContext } from "../contexts/DarkModeContext.jsx";
+import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
 
-function App() {
+function UnionDispatch() {
   const { ref, inView: inFeaturedArticles } = useInView({
     threshold: 0.1,
   });
+
+  const page_title = "The Union Dispatch";
+
+  useEffect(() => {
+    document.title = page_title;
+  }, []);
 
   const { darkMode, toggleTheme } = useContext(DarkModeContext);
 
@@ -61,4 +68,4 @@ function App() {
   );
 }
 
-export default App;
+export default UnionDispatch;

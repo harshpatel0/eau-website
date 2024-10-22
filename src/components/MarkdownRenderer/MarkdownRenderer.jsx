@@ -1,9 +1,16 @@
-import React from "react";
+import { React, useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
+import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
+
+import "./MarkdownRenderer.css";
+
 // Documentation: https://www.npmjs.com/package/react-markdown
-function MarkdownRenderer() {
+function MarkdownRenderer(props) {
+  // Props: Title, author, authortagline, markdowncontent, date
+  const { darkMode, toggleTheme } = useContext(DarkModeContext);
+
   const markdown = "# Hi *Pluto*!";
   const markdownContent = `
 # Markdown: Syntax
@@ -30,6 +37,22 @@ function MarkdownRenderer() {
 
 **Note:** This document is itself written using Markdown; you
 can \`see the source for it by adding '.text' to the URL\`.
+
+----
+
+## My Stuff
+Woww look at this dynamic content
+> A block quote with ~strikethrough~ and a URL: https://reactjs.org.
+
+* Lists
+* [ ] todo
+* [x] done
+
+A table:
+
+| a | b |
+| - | - |
+| Hello, this is a | table |
 
 ----
 
@@ -249,7 +272,7 @@ This is a normal paragraph:
 
 Here is an example of AppleScript:
 
-    tell application \\"Foo\\"
+    tell application \"Foo\"
         beep
     end tell
 
@@ -262,9 +285,9 @@ easy to include example HTML source code using Markdown -- just paste
 it and indent it, and Markdown will handle the hassle of encoding the
 ampersands and angle brackets. For example, this:
 
-    <div class=\\"footer\\">
+    <div class=\"footer\"
         &copy; 2004 Foo Corporation
-    </div>
+    \<\/div>
 
 Regular Markdown syntax is not processed within code blocks. E.g.,
 asterisks are just literal asterisks within a code block. This means
@@ -288,12 +311,81 @@ wish, you may use spaces between the hyphens or asterisks.
 
 - - -
 
+      border: 1px solid black;
+
 ---------------------------------------
 `;
 
   return (
     <div className="markdownrenderer">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+      <ReactMarkdown
+        components={{
+          pre(props) {
+            const { node, ...rest } = props;
+            return (
+              <pre
+                style={
+                  ({ color: darkMode ? "white" : "black" },
+                  { backgroundColor: darkMode ? `black` : "#ececec" })
+                }
+                {...rest}
+              />
+            );
+          },
+
+          table(props) {
+            const { node, ...rest } = props;
+            return (
+              <table
+                style={{
+                  border: darkMode ? "1px solid whitesmoke" : "1px solid black",
+                }}
+                {...rest}
+              />
+            );
+          },
+          th(props) {
+            const { node, ...rest } = props;
+            return (
+              <th
+                style={{
+                  border: darkMode ? "1px solid whitesmoke" : "1px solid black",
+                }}
+                {...rest}
+              />
+            );
+          },
+          td(props) {
+            const { node, ...rest } = props;
+            return (
+              <td
+                style={{
+                  border: darkMode ? "1px solid whitesmoke" : "1px solid black",
+                }}
+                {...rest}
+              />
+            );
+          },
+          img(props) {
+            const { node, ...rest } = props;
+            return <img className="markdown-generated-image" {...rest} />;
+          },
+          a(props) {
+            const { node, ...rest } = props;
+            return (
+              <a
+                style={{
+                  color: darkMode
+                    ? "var(--eau-purple-dark)"
+                    : "var(--eau-purple)",
+                }}
+                {...rest}
+              />
+            );
+          },
+        }}
+        remarkPlugins={[remarkGfm]}
+      >
         {markdownContent}
       </ReactMarkdown>
     </div>

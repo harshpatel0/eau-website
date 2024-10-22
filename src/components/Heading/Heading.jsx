@@ -1,6 +1,8 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
+import "./Heading.css";
+
 function Heading(props) {
   let styles = {
     color:

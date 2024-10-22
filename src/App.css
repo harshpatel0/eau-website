@@ -14,7 +14,7 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: var(--caribbean-current);
+  background: var(--eau-purple);
   height: 3px;
 }
 
@@ -24,221 +24,201 @@
   width: 0px;
 }
 
-/* :root {
-  --eerie-black: #1f1f1fff;
-  --caribbean-current: #3c6e71ff;
-  --surface: #2e2e2e;
-  --highlighted: #d9d9d9ff;
-  --carmine: #9a031eff;
+/* Adding Glacial Interdifference Font Family */
+/* @font-face {
+  font-family: "Glacial Interdifference";
+  src: url("fonts/GlacialInterdifference/GlacialIndifference-Regular.otf");
+  font-weight: normal;
+}
 
-  background-color: black;
+@font-face {
+  font-family: "Glacial Interdifference";
+  src: url("fonts/GlacialInterdifference/GlacialIndifference-Bold.otf");
+  font-weight: bold;
 } */
 
-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 4rem;
-  height: 100dvh;
-  /* background-color: var(--surface); */
-
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  backdrop-filter: blur(1000px);
-  z-index: 2;
-  transition: all 0.5s;
-  overflow: hidden;
+/* Adding Poppins Font Family */
+/* @font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 100;
+  src: url("fonts/Poppins/Poppins-ExtraLight.ttf") format("truetype");
 }
 
-nav > .icons {
-  padding: 1rem;
-  transition: all 0.2s;
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 100;
+  src: url("fonts/Poppins/Poppins-ExtraLightItalic.ttf") format("truetype");
 }
 
-nav > .icons:hover {
-  background-color: var(--highlighted-light);
-  cursor: pointer;
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 200;
+  src: url("fonts/Poppins/Poppins-Light.ttf") format("truetype");
 }
 
-.location-heading {
-  position: fixed;
-  padding: 1rem;
-  font-size: 0.75rem;
-  backdrop-filter: blur(1000px);
-  font-weight: bold;
-  left: 6rem;
-  top: 20px;
-  transition: all 1s;
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 200;
+  src: url("fonts/Poppins/Poppins-LightItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  src: url("fonts/Poppins/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 300;
+  src: url("fonts/Poppins/Poppins-ThinItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 400;
+  src: url("fonts/Poppins/Poppins-Italic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  src: url("fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 500;
+  src: url("fonts/Poppins/Poppins-MediumItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: url("fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 600;
+  src: url("fonts/Poppins/Poppins-SemiBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  src: url("fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 700;
+  src: url("fonts/Poppins/Poppins-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  src: url("fonts/Poppins/Poppins-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 800;
+  src: url("fonts/Poppins/Poppins-ExtraBoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 900;
+  src: url("fonts/Poppins/Poppins-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Poppins";
+  font-style: italic;
+  font-weight: 900;
+  src: url("fonts/Poppins/Poppins-BlackItalic.ttf") format("truetype");
+} */
+
+@font-face {
+  font-family: "Space Mono";
+  font-style: normal;
   font-weight: normal;
+  src: url("fonts/SpaceMono/SpaceMono-Regular.ttf");
 }
 
-main {
-  display: flex;
-  overflow-x: auto;
-  gap: 1rem;
-  flex-shrink: 0;
+@font-face {
+  font-family: "Jost";
+  font-style: normal;
+  src: url("fonts/Jost/Jost-VariableFont_wght.ttf")
+    format("truetype-variations");
 }
 
-.flex-container {
-  overflow-y: hidden;
-  height: 100dvh;
-  transition: all 0.5s;
+@font-face {
+  font-family: "Jost";
+  font-style: italic;
+  src: url("fonts/Jost/Jost-Italic-VariableFont_wght.ttf")
+    format("truetype-variations");
+}
+/* End of Fonts */
+
+* {
+  padding: 0;
+  margin: 0;
+  /* font-family: "Poppins"; */
+  /* font-family: "Glacial Interdifference"; */
+  font-family: "Jost";
 }
 
-.hero-content {
-  height: 100dvh;
-  overflow-y: hidden;
+:root {
+  /* CSS HEX */
+  --eerie-black: #1f1f1fff;
+  --caribbean-current: #3c6e71ff;
+  --surface: #f5f5f5ff;
+  --highlighted: #d9d9d9ff;
+  --carmine: #9a031eff;
+  --eau-purple: #7644c3;
+  --eau-purple-dark: #8c65c7;
+
+  --background-dark: rgb(28, 28, 28);
+  --background-light: rgb(246, 246, 246);
 }
 
-.hero-section {
-  min-width: 90vw;
-  height: 100dvh;
-
-  overflow-y: hidden;
-
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
-
-  transition: all 1s;
-
-  /* flex-direction: column;
-  justify-content: flex-end; */
-
-  scroll-snap-type: x mandatory;
-  /* transition: background-size 0.5s cubic-bezier(0.81, -1.55, 0.17, 2.16); */
+.app-light {
+  background-color: var(--background-light);
+  color: black;
 }
-
-.hero-section:hover {
-  cursor: pointer;
-  background-size: 110%;
-}
-
-.hero-text {
-  position: relative;
-  top: calc(100dvh - 15rem);
-  left: 3rem;
-  color: var(--surface);
-  margin-left: 3rem;
-  z-index: 1;
-  font-weight: bold;
-
-  overflow-wrap: break-word; /* Updated property to handle long text wrapping */
-  word-wrap: break-word; /* Allow long words to break and wrap */
-  white-space: normal; /* Ensure text wraps normally */
-  text-align: left; /* Adjust text alignment */
-  max-width: 70vw; /* Ensure text doesn't exceed container width */
-  line-height: 1.2; /* Adjust line-height for readability */
-}
-
-.hero-link {
-  font-size: 1rem;
-}
-
-.hero-header {
-  top: 20%;
-  font-size: 6rem !important;
-}
-
-.hero-p {
-  font-size: 4rem;
-  margin-top: 10px;
-}
-
-.hero-author {
-  font-size: 2rem;
-  margin-top: 10px;
-}
-
-.hero-content {
-  display: flex;
-  overflow-x: auto; /* Allows horizontal scrolling if needed */
-  gap: 1rem; /* Space between items */
-  flex-shrink: 0;
-}
-
-.all-articles {
-  min-width: 90vw;
-  height: 100dvh;
-  transition: all 1s;
-  overflow: wrap;
-  white-space: wrap;
-  scroll-snap-type: x mandatory;
-
-  display: flex;
-  overflow-x: auto;
-}
-
-.articles-list {
-  margin-top: 7rem;
-  margin-left: 5rem;
-  display: flex;
-  transition: border 0.5s;
-}
-
-.articles-list-item {
-  padding: 1rem;
-  scroll-snap-align: center;
-  font-weight: normal;
-  transition: all 2s;
-}
-.articles-list-item > h2 {
-  font-size: 1.5rem;
-}
-.articles-list-item > p {
-  font-size: 1rem;
-}
-
-.articles-list-item:hover {
-  border-bottom: 4px solid var(--caribbean-current);
+.app-dark {
+  background-color: var(--background-dark);
+  color: white;
 }
 
 @media screen and (max-width: 600px) {
   * {
     scroll-behavior: smooth;
   }
-  .hero-p {
-    font-size: 2.5rem;
-  }
-
-  .hero-author {
-    font-size: 1.5rem;
-  }
-
-  .hero-text {
-    margin-left: 2rem;
-  }
-
-  .hero-section {
-    background-size: cover;
-  }
-  .hero-section:hover {
-    cursor: pointer;
-    background-size: cover;
-  }
-  .articles-list-item > h2 {
-    font-size: 1rem;
-  }
-  .articles-list-item > p {
-    font-size: 0.75rem;
-  }
-}
-
-pre {
-  background-color: rgb(36, 36, 36);
-}
-
-code {
-  font-family: "Space Mono";
-}
-
-a {
-  color: var(--caribbean-current);
-}
-
-.markdownrenderer {
-  margin-left: 8rem;
-  margin-top: 8rem;
-  transition: all 0.5s;
 }
