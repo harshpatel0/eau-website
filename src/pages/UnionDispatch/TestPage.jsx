@@ -6,14 +6,14 @@ import MarkdownRenderer from "../../components/MarkdownRenderer/MarkdownRenderer
 
 import { DarkModeContext } from "../../contexts/DarkModeContext";
 
-import "./style.css";
+import "./UnionDispatch.css";
 
 function TestPage() {
   const { darkMode, toggleTheme } = useContext(DarkModeContext);
   return (
     <>
-      <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
-      <Heading darkMode={darkMode} headerText="Hello World!" />
+      <Navbar />
+      <Heading inFeaturedArticles={true} headerText="Hello World!" />
       <MarkdownRenderer></MarkdownRenderer>
     </>
   );
