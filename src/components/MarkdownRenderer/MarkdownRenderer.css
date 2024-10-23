@@ -42,19 +42,19 @@ td {
   width: 75%;
   background-size: center;
   margin: 0 10%;
+
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .markdownrenderer {
-  margin-left: 12rem;
-  margin-right: 12rem;
-  margin-top: 8rem;
   transition: all 0.5s;
   line-height: 2;
 }
 
 @media screen and (max-width: 600px) {
   .markdownrenderer {
-    margin-left: 5rem;
-    margin-right: 2.5rem;
   }
 }

@@ -1,4 +1,4 @@
-import { React, useContext } from "react";
+import { useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -386,7 +386,7 @@ wish, you may use spaces between the hyphens or asterisks.
         }}
         remarkPlugins={[remarkGfm]}
       >
-        {markdownContent}
+        {props.markdownContent}
       </ReactMarkdown>
     </div>
   );
