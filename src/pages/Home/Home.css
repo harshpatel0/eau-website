@@ -1,0 +1,123 @@
+.homepage-hero {
+  width: 100vw;
+  min-height: 95vh;
+  padding: 0 auto;
+  z-index: 2;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.homepage-hero-content {
+  margin-left: 4rem;
+}
+
+.homepage-hero-bar {
+  backdrop-filter: blur(100px);
+  padding: 1rem;
+  margin: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+}
+
+.homepage-hero-bar > h1 {
+  font-size: 1.5rem;
+  width: max-content;
+}
+
+.homepage-hero-bar-socials {
+  justify-self: flex-end;
+  align-self: center;
+}
+
+.homepage-hero-bar-socials-icons {
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: all 1s;
+}
+
+.homepage-hero-bar-socials-icons > hover {
+  cursor: pointer;
+}
+
+.homepage-hero-title {
+  margin-left: 2rem;
+  margin-top: 8rem;
+}
+
+.homepage-hero-title > h2 {
+  font-size: 3.5rem;
+}
+
+.homepage-hero-title > p {
+  font-size: 2rem;
+}
+
+.homepage-hero-club-about {
+  padding: 1rem;
+  margin: 2rem;
+  margin-top: 5rem;
+  border-radius: 10px;
+  backdrop-filter: blur(100px);
+}
+
+@keyframes floating {
+  from {
+    transform: translate(0, 0px);
+  }
+  65% {
+    transform: translate(0, 15px);
+  }
+  to {
+    transform: translate(0, -0px);
+  }
+}
+
+.homepage-hero-scroll-notifier {
+  display: flex;
+  justify-content: center;
+
+  padding-bottom: 10px;
+  padding-top: 1.5rem;
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+
+  transition: all 0.5s;
+}
+
+.location-heading {
+  z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+  .homepage-hero-bar > h1 {
+    justify-content: flex-start;
+    font-size: 1.5rem;
+    width: min-content;
+  }
+
+  .homepage-hero-title > h2 {
+    font-size: 2rem;
+  }
+
+  .homepage-hero-title > p {
+    font-size: 1.5rem;
+  }
+
+  .homepage-hero-title {
+    margin-left: 2rem;
+    margin-top: 4rem;
+  }
+
+  .homepage-hero-club-about {
+    margin-top: 3rem;
+    border-radius: 10px;
+    backdrop-filter: blur(100px);
+  }
+}
