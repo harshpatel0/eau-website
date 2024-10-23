@@ -7,16 +7,20 @@ import {
   TestTube,
 } from "@phosphor-icons/react";
 
+import { useContext } from "react";
+import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
+
 import "./Navbar.css";
 
 import { Link } from "react-router-dom";
 
 function Navbar(props) {
+  const { darkMode, toggleTheme } = useContext(DarkModeContext);
   return (
     <nav className="navbar">
       <IconContext.Provider
         value={{
-          color: props.darkMode ? "white" : "black",
+          color: darkMode ? "white" : "black",
           size: 32,
           weight: "regular",
           mirrored: false,
@@ -28,17 +32,21 @@ function Navbar(props) {
           </Link>
         </div>
 
-        <Article alt="All Articles" className="icons" />
+        <div className="icons">
+          <Link to="/uniondispatch">
+            <Article alt="The Union Dispatch" className="icons" />
+          </Link>
+        </div>
 
-        {props.darkMode ? (
+        {darkMode ? (
           <Sun
-            onClick={props.toggleTheme}
+            onClick={toggleTheme}
             alt="Switch to Light Mode"
             className="icons theme-selector"
           />
         ) : (
           <MoonStars
-            onClick={props.toggleTheme}
+            onClick={toggleTheme}
             className="icons theme-selector"
             alt="Switch to Dark Mode"
           />
