@@ -4,11 +4,11 @@ import { useInView } from "react-intersection-observer";
 
 // Components
 import Navbar from "../../components/Navbar/Navbar.jsx";
-import HeroSection from "../../components/HeroSection.jsx";
+import HeroSection from "./components/HeroSection.jsx";
 import Heading from "../../components/Heading/Heading.jsx";
-import AllArticles from "../../components/AllArticles.jsx";
+import AllArticles from "./components/AllArticles.jsx";
 import "../../App.css";
-import "./style.css";
+import "./UnionDispatch.css";
 
 // Other Assets
 import SunkenShipBackgroundImage from "../../assets/images/SunkenSwamp.jpg";
@@ -39,6 +39,7 @@ function UnionDispatch() {
         headerText={inFeaturedArticles ? "Featured Articles" : "All Articles"}
         inFeaturedArticles={inFeaturedArticles}
         darkMode={darkMode}
+        showBorderAndShadow={true}
       />
       <main
         id="flex-container"
