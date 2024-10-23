@@ -9,8 +9,8 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  backdrop-filter: blur(1000px);
-  z-index: 2;
+  backdrop-filter: blur(100px);
+  z-index: 100;
   transition: all 0.5s;
   overflow: hidden;
 }
