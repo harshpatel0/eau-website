@@ -9,3 +9,10 @@
   transition: all 1s;
   font-weight: normal;
 }
+
+@media screen and (max-width: 600px) {
+  .location-heading {
+    padding: 0.75rem;
+    font-size: 0.5rem;
+  }
+}
