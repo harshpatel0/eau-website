@@ -7,14 +7,24 @@ import {
   IconContext,
   InstagramLogo,
   Envelope,
-  UserSwitch,
   CaretDown,
+  Palette,
+  VinylRecord,
+  Pencil,
+  MaskHappy,
+  Gavel,
+  Presentation,
+  Article,
 } from "@phosphor-icons/react";
-import HeroImage from "../../assets/images/HeroImage.jpg";
+
+import HeroImage from "../../assets/images/pexels-anete-lusina-6331086.jpg";
+import UnionDispatchImage from "../../assets/images/single-earth-ApivzPERunU-unsplash.jpg";
 import MarkdownRenderer from "../../components/MarkdownRenderer/MarkdownRenderer";
 import "./Home.css";
 
 import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
+
+import ClubActivities from "./components/ClubActivities.jsx";
 
 function Home() {
   const { darkMode, toggleTheme } = useContext(DarkModeContext);
@@ -32,7 +42,19 @@ function Home() {
     },
     {
       quote: "Upholding Security 👮🚓",
-      caption: "Jeremy Mwangi",
+      caption: "Jeremy Mwangi, CSO",
+    },
+    {
+      quote: "Make sure to check under your bed before sleeping",
+      caption: "Harsh Patel, Vice President",
+    },
+    {
+      quote: "Its never that deep.",
+      caption: "Keval Patel, Coordinator",
+    },
+    {
+      quote: "From the screen to the ring to the pen to the king",
+      caption: "Smash through the ceiling cause I'm reaching for the stars",
     },
   ];
 
@@ -102,28 +124,15 @@ function Home() {
             <div onClick={chooseQuote} className="homepage-hero-title">
               <h2>{quote}</h2>
               <p>
-                {/* <span>
-                <UserSwitch onClick={chooseQuote} />
-              </span> */}
                 <i>{quoteCaption}</i>
               </p>
             </div>
-
-            {/* <div className="homepage-hero-club-about">
-            <h2>Aim of the club</h2>
-            <p>
-              Our aim with this club is to get people out of their comfort zone,
-              speaking about various topics through lively debates, spark
-              creativity through written literature, bring forth the ability to
-              express through presentations and finally, create new friendships,
-              partners and teammates along the way
-            </p>
-          </div> */}
             <div className="homepage-hero-club-about">
               <MarkdownRenderer
                 markdownContent="
-### Could this be where featured content goes? Or Aim of the Club?
-Idk it seems like a good place, something like oh look. Go to [The Union Dispatch](/uniondispatch) for a new article!!
+### Featured Post
+## The Second Day of the EAU
+Film Presentations! Show off your favourite thriller, comedy and sci-fi to everyone.
             "
               ></MarkdownRenderer>
             </div>
@@ -135,170 +144,162 @@ Idk it seems like a good place, something like oh look. Go to [The Union Dispatc
         </div>
       </IconContext.Provider>
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum fugiat
-        sint nisi vero, commodi modi maxime ipsum quidem obcaecati sit
-        cupiditate. Officiis pariatur optio odit aperiam iure, quis ducimus
-        voluptates! Perferendis et tempore eius. Explicabo autem distinctio
-        accusantium labore amet optio necessitatibus suscipit non nostrum
-        ratione? Impedit laborum rem officiis quos id enim, at illum beatae,
-        sequi praesentium, cum minima. Eligendi quaerat praesentium laborum
-        cupiditate dolor, impedit pariatur enim maiores quasi sit animi est ut
-        atque quibusdam deleniti at iste fugit quo, possimus, consequatur illum
-        velit sapiente ullam. Animi, impedit! Possimus, omnis praesentium.
-        Aliquid, sint ratione aspernatur eos voluptas veritatis, eaque nobis
-        libero magnam, molestiae quidem fuga non tenetur! Debitis quisquam
-        numquam alias quam libero necessitatibus vero ipsum cumque ratione?
-        Nulla veniam quasi repellat magnam quam itaque veritatis necessitatibus,
-        magni error, dolorum accusantium in. Magnam repellat itaque voluptas
-        accusantium ad repudiandae dicta nisi odit velit consequatur rerum nam,
-        unde numquam? Sapiente iste sint vitae quod dolor ipsa exercitationem
-        debitis odit, reiciendis ut ex! Sunt labore omnis sit mollitia, a qui
-        animi hic, quibusdam officiis adipisci nihil commodi laboriosam libero
-        porro. Magnam eius sapiente possimus ullam, fugiat voluptate libero ab
-        sit odit iure ducimus in soluta assumenda modi cum distinctio ratione
-        et? Quam, tempora iste iure fugit minus nobis dolorem sapiente. Quaerat
-        veniam odio cumque praesentium in molestias consectetur facere autem non
-        maxime! Ratione id minus velit in, voluptatibus tempore eaque adipisci
-        est. Quae aliquid esse, officia magni pariatur voluptatum dolorum.
-        Similique esse non fugit quisquam iure tempora inventore, nobis
-        obcaecati et, deleniti molestias repudiandae rerum commodi cupiditate
-        fugiat deserunt perspiciatis quos adipisci nam odit sequi. Omnis maxime
-        aliquid quisquam distinctio? Molestias eius corrupti modi vitae ut rerum
-        consequatur voluptatibus vel itaque, tempora fugit omnis enim ducimus
-        nulla debitis qui porro tenetur, pariatur, nisi eaque architecto. Odit
-        magni praesentium tenetur delectus? Repellat, minima. Ut ab harum quas
-        vero hic maxime quaerat eos doloribus accusantium? Natus expedita magnam
-        repudiandae earum at? Explicabo asperiores nisi corrupti labore sequi
-        tempore cupiditate velit dolorum enim. Soluta dolorem eum libero culpa
-        officia ea at, nam minima distinctio animi quae esse tenetur nobis sint
-        blanditiis voluptatem harum error itaque laborum totam provident quod,
-        vero nesciunt fugit? Voluptas! Obcaecati distinctio nam, possimus
-        molestiae consequatur animi iusto, consequuntur accusamus adipisci
-        aspernatur sequi expedita eius! Perferendis totam pariatur ducimus, esse
-        earum consectetur vero omnis at itaque nam quam voluptatum. Sapiente.
-        Dolorem, illum? Ipsa voluptates odio excepturi hic id expedita
-        blanditiis facilis facere deserunt quam ipsam quisquam doloribus numquam
-        sed quas magni iure, nemo suscipit aspernatur corporis! Doloribus
-        recusandae earum nisi? Dolorum reprehenderit dicta sed quisquam quam
-        autem? Tenetur recusandae sed magni, aperiam modi officiis, eos illum
-        quaerat repellat, fugiat suscipit harum est a maxime consequatur soluta
-        error vero! Reprehenderit, dicta! Ipsum voluptatem quo vero maxime eos
-        architecto quidem at unde magni quam! Quaerat, laborum, obcaecati
-        ratione hic, fugiat culpa quidem iusto perferendis vero maxime animi
-        architecto delectus accusamus ad maiores! Expedita odio amet optio est
-        qui illum sunt officia. Aut, aliquid dolorem nulla tempore veniam
-        deserunt amet rem fugiat quod libero ratione quam explicabo fugit
-        expedita. Nobis libero similique maxime? Assumenda, eveniet. Fuga fugiat
-        expedita dicta odio iure. Animi earum, quam voluptate fuga sint deserunt
-        libero quod molestias maiores hic est nihil voluptatibus sit ad, modi
-        ipsam explicabo beatae iusto! Doloribus id reiciendis iure repudiandae,
-        natus ullam molestiae ipsum quod vel similique, impedit, temporibus
-        reprehenderit. Ratione possimus nobis suscipit et hic veritatis saepe
-        rerum, ea deserunt officia distinctio aut eveniet! Eum quo facilis hic
-        iste eveniet ipsum amet ipsa animi voluptate, similique illo neque
-        pariatur dicta perferendis explicabo eius officiis doloremque voluptatum
-        minima voluptas vitae a unde odit? Animi, dignissimos! Ipsam ducimus
-        blanditiis amet at asperiores temporibus, eos rem incidunt doloremque
-        neque nesciunt sed quaerat nam cum ut corporis eligendi vero qui esse
-        dolores a dolorum facere consectetur quibusdam! Vitae! Doloribus quaerat
-        ipsum dicta blanditiis hic error illo consectetur accusamus beatae ipsa
-        temporibus reiciendis, fuga repudiandae repellat qui. Numquam sed
-        accusamus iste placeat unde voluptates. Aperiam ipsum at cupiditate
-        expedita. Architecto, numquam! Nemo magni explicabo voluptatibus
-        doloremque, tempore asperiores quam assumenda nam. Fugit laborum itaque
-        aperiam dignissimos corrupti, neque sed nihil perferendis nobis
-        cupiditate placeat, quos accusamus omnis magnam nemo. Veniam accusamus
-        vitae ab libero maiores iusto adipisci deleniti iure natus. Rerum dolore
-        error blanditiis optio officiis! Fugiat consequatur ducimus consectetur
-        sequi quibusdam sed in, quasi ab dolor. Rerum, voluptatem! Doloremque
-        sint, tenetur laboriosam omnis debitis iure quibusdam molestiae
-        necessitatibus, asperiores fugit quaerat molestias quas velit! Pariatur
-        illum est nulla consequuntur eum repellat doloribus suscipit, quae odio
-        non hic rerum? Animi, nemo deserunt laborum quo numquam cumque. Non
-        expedita dolorum repellat rem doloremque incidunt quae suscipit
-        voluptates magni cumque, fugit deserunt labore minus atque numquam sint
-        temporibus eius eos soluta! Accusamus, saepe nobis consequatur fuga
-        cumque a sequi tenetur velit nihil ex, quae beatae sint dolorem aliquam
-        obcaecati quo numquam et itaque. Magnam facilis dolores maiores. Maxime
-        asperiores expedita fugit. Veniam ea temporibus nobis, aliquam cum
-        nesciunt alias, corrupti totam obcaecati maxime quia corporis quis,
-        earum repellat doloremque tempore. Odio veniam aspernatur recusandae
-        omnis perferendis sapiente fuga quisquam deleniti molestias! Accusamus
-        corrupti deserunt totam debitis sapiente facere? Beatae est sunt
-        praesentium eveniet expedita, officiis ratione impedit nihil, quod cum
-        accusantium similique eos quasi nesciunt laudantium nemo tempora alias
-        odio iste. Obcaecati magnam natus veritatis. Velit, dolores autem qui
-        ipsa dignissimos quidem maiores suscipit voluptatum quasi? Eligendi
-        error ipsam magni facilis repudiandae voluptate nam nesciunt quasi
-        quidem qui, vitae, officiis accusantium! Possimus labore ab ea,
-        perferendis soluta quos quidem placeat, alias tenetur autem eos aliquid
-        accusantium? Nam quam minima maxime labore unde velit minus quisquam
-        error, illo commodi id, corrupti officiis. Expedita rem, odio beatae
-        itaque quaerat minima enim rerum deleniti laboriosam optio iure harum
-        sint tempora praesentium assumenda, nesciunt soluta esse, labore ut
-        accusantium laborum! Totam temporibus consequuntur modi corporis. Odit
-        quibusdam similique minus iure animi! Doloribus autem culpa ullam. Iste
-        dolore eos fugit ipsum, perferendis molestiae officiis, temporibus
-        blanditiis esse id harum assumenda ullam dolor nobis? Sunt, vero velit?
-        Hic minus eum at debitis consequatur eligendi enim laudantium unde
-        impedit quo excepturi voluptate officiis aliquid harum earum dignissimos
-        provident, praesentium voluptatem facere rerum asperiores? Sed dicta
-        esse optio illo. Sequi quia magnam quod quibusdam nihil eum, rem
-        possimus vel excepturi fugiat. Perspiciatis officia architecto atque
-        nulla doloribus. Ea nisi perferendis incidunt officiis repellat alias
-        error expedita velit explicabo at? Eius sint modi dolorem ullam sunt.
-        Esse ab quasi deserunt omnis sit laborum eligendi voluptates veritatis
-        modi, nam quidem ex maxime tempora quis. Ex, veritatis! Cum voluptas
-        perspiciatis dicta sequi? Exercitationem esse illum accusantium adipisci
-        rerum excepturi, vel eveniet quo est eius, explicabo fuga. Consectetur
-        nostrum blanditiis architecto quidem esse, eligendi eius sint dolor
-        expedita? Facilis omnis et provident dolorum. Quam voluptatibus tenetur
-        necessitatibus facilis molestias eaque vitae reprehenderit. Aut harum
-        minus suscipit dolorum, accusamus eum excepturi incidunt vitae ab atque
-        dolores dolor maiores maxime voluptatibus, nihil quae error. Veritatis.
-        Cum consequatur dolores exercitationem quas debitis accusamus possimus
-        quibusdam similique atque? Officia aut voluptatem rerum aspernatur,
-        possimus doloremque alias aliquam cumque. Tempore nesciunt sit beatae
-        fuga sint, similique dolor odio? Eligendi quod dolorem amet velit atque
-        illum a odio ipsa, eveniet voluptatibus ex quam dolorum consectetur
-        impedit eius nostrum, perferendis autem repudiandae voluptates, mollitia
-        nihil dolore! Atque minima ipsa vero? Atque quas provident molestiae
-        fugit facilis, id asperiores cumque delectus necessitatibus
-        reprehenderit aliquam. Magni laboriosam libero deleniti minus cum nobis
-        laudantium quae sed, cupiditate aliquid mollitia, vitae modi id
-        corrupti. Dicta nulla, dolores impedit debitis fugiat, enim rerum
-        dolorem iusto hic expedita vitae consectetur veniam ullam dolor!
-        Sapiente consequuntur sunt sint ullam quisquam, atque odio. Cum eveniet
-        accusamus dolore quaerat. Ipsum corporis harum maiores quis sequi,
-        recusandae fugit consectetur rem asperiores vel nesciunt minima
-        aspernatur enim accusantium corrupti illo dolorum, at necessitatibus
-        iure. Laboriosam optio ut voluptate eaque soluta vel! Culpa labore
-        repudiandae, veniam impedit quasi similique eaque. Necessitatibus,
-        laborum perferendis repellendus obcaecati enim adipisci cupiditate
-        doloremque saepe illo, doloribus fuga ab aliquid, expedita dolores
-        exercitationem eos fugit minus suscipit. Perferendis molestias, eum
-        incidunt nisi accusantium corporis deserunt culpa, architecto dicta
-        exercitationem, sed at minima fuga obcaecati vero quidem quod! Alias
-        eveniet quisquam ullam quis doloribus unde fugit debitis dicta! Fugiat
-        eligendi in iusto impedit recusandae dolorem rem perspiciatis nobis
-        tenetur molestiae. Voluptatibus similique natus cum enim minima dolore
-        nobis reprehenderit facilis animi? Quia beatae veritatis incidunt id
-        asperiores voluptatem! Vitae ex maiores ratione, at fugit sunt
-        voluptatibus hic fugiat neque delectus ea laboriosam eveniet rerum
-        consectetur dicta nisi ipsum maxime dolore dolor minus. Veritatis id
-        perferendis quae nihil voluptatum! Maxime, non incidunt dolor aspernatur
-        voluptate repellat hic consequatur quos atque dolorem debitis mollitia,
-        perspiciatis possimus id porro deserunt illo facere quod excepturi
-        obcaecati eligendi animi. Cum suscipit quos totam. Necessitatibus
-        debitis eaque consequatur dolor dolorum! Maxime vitae, necessitatibus
-        ipsum corporis et sed sit ad quas optio officia qui fuga, officiis
-        accusantium id nemo, harum mollitia quidem asperiores voluptate sunt. In
-        impedit necessitatibus aut officia expedita eos voluptatibus fugiat,
-        iure reiciendis quae possimus vero voluptatem quod non error pariatur
-        laboriosam nesciunt ipsam doloremque quibusdam esse dignissimos
-        molestias asperiores. Architecto, non?
-      </p>
+      <section className="homepage-main">
+        <section className="homepage-club-aim-vision">
+          <div className="club-aim">
+            <h2>Aim of the Club</h2>
+            <p>
+              Our aim with this club is to get people out of their comfort zone,
+              speaking about various topics through lively debates, spark
+              creativity through written literature, bring forth the ability to
+              express through presentations and finally, create new friendships,
+              partners and teammates along the way
+            </p>
+          </div>
+          <div className="club-vision">
+            <h2>Vision of the Club</h2>
+            <p>
+              To inspire and connect people by expressing the beauty,
+              complexity, and diversity of the human experience through every
+              form of art. Whether through words, visuals, or sound, our voice
+              transcends boundaries, sparking imagination, igniting emotion, and
+              shaping perspectives. We strive to create art that speaks
+              authentically, resonates deeply, and fosters a world where
+              creativity empowers us all to see, feel, and transform
+            </p>
+          </div>
+        </section>
+        <section className="activities-grid">
+          <IconContext.Provider
+            value={{
+              color: darkMode ? "white" : "black",
+              size: 64,
+              weight: "fill",
+              mirrored: false,
+            }}
+          >
+            <ClubActivities
+              title="Music"
+              // description="
+              //   The beat of your heart, the snap of your thumb the sound of the
+              //   wind, the hallow in your speech listen and relate, rhythm and
+              //   lyric date. From the artistry of rap to the cadence of pop, this
+              //   category offers you the chance to compose music, analyze lyrics,
+              //   and explore the messages conveyed through music from the 19th
+              //   century to the 21st century."
+              description="The beat of your heart, the snap of your thumb, the sound of the wind, the hollow in your speech—listen and relate as rhythm meets lyric. From rap to pop, this category invites you to compose, analyze, and explore the messages in music from the 19th to the 21st century."
+              iconComponent={<VinylRecord className="activities-icon" />}
+            />
+            <ClubActivities
+              title="Film and Theatrical"
+              // description="
+              //   Films & theatricals. A drama may unfold as a story is told an act put on screen as life rolls through scenes.
+              //   The films and theatricals department offers an opportunity to discuss your favourite movies and receive recommendations for intriguing films to explore.
+              //   It also provides a platform to write scripts and stage complete plays.
+              //   The possibilities for creation and collaboration in the theatrical realm are endless."
+              description="Films & Theatricals. As stories unfold and life rolls through scenes, this category lets you dive into favorite films, explore new recommendations, and craft your own scripts and plays. The possibilities for creativity and collaboration are endless."
+              iconComponent={<MaskHappy className="activities-icon" />}
+            />
+
+            <ClubActivities
+              title="Art"
+              // description="
+              //   Paint me the emotions I cannot seem to speak, sketch my inner pain that hides my crystal cry mould my true character on a canvas that's pretty clear draw a sea of words that I could never speak out here.
+              //   There are various mediums of art, such as painting, photography, and sculpture.
+              //   This category broadens your creative scope, allowing you to make and express, while also encouraging analysis and understanding of the messages behind the artwork"
+              description="Paint the emotions I can’t voice, sketch hidden pain, mold my true character on a clear canvas, and draw a sea of words I dare not speak. With mediums like painting, photography, and sculpture, this category expands your creative reach, inviting both creation and deeper understanding of the messages within art."
+              iconComponent={<Palette className="activities-icon" />}
+            />
+
+            <ClubActivities
+              title="Writing"
+              // description="
+              // When words are hard to articulate, a vessel of expression is in the quake.
+              // When books are a source of an escape or poetry a ballad to embrace paint the prose, haze the emotion.
+              // In the category of writing, you are provided with the creative opportunity to explore, develop, and showcase your literary talents.
+              // Whether you choose to craft a book, poem, short story, or any other form of writing, you have the freedom to delve into various genres, from fantasy to action and beyond."
+              description="When words are hard to articulate, writing becomes a vessel of expression, with books as escapes and poetry as ballads to embrace. This category offers you the freedom to explore, develop, and showcase your literary talents—whether through books, poems, short stories, or any genre from fantasy to action and beyond."
+              iconComponent={<Pencil className="activities-icon" />}
+            />
+
+            <ClubActivities
+              title="Debating"
+              // description="
+              // We have the right to speech, the right to critic.
+              // Your opinion is your blade sharp with conviction without delay,
+              // So why not join the debate in this category, a wide range of topics,
+              // from peaceful to controversial topics, are open for endless discussion.
+              // Whatever you are deeply passionate about and strongly support can be debated and encouraged.
+              // Issues are considered, and solutions may emerge, all within this area.
+              // "
+              description="We have the right to speak, the right to critique—your opinion is a blade sharp with conviction. Join this category to debate topics ranging from peaceful to controversial, where your passions find a voice. Discuss issues, explore solutions, and dive into endless conversation."
+              iconComponent={<Gavel className="activities-icon" />}
+            />
+
+            <ClubActivities
+              title="Presenting"
+              description="
+              Why hide from the back of the stage? 
+              When you can share the beauty of your art whether you write or act, sing or dance, 
+              or study works of art, the presentations category provides an opportunity to showcase 
+              your talents and leave a lasting mark."
+              iconComponent={<Presentation className="activities-icon" />}
+            />
+          </IconContext.Provider>
+        </section>
+        <section
+          style={{ backgroundImage: `url(${UnionDispatchImage})` }}
+          className="homepage-the-union-dispatch-blurb"
+        >
+          <div className="union-dispatch-section">
+            <div className="union-dispatch-section-content">
+              <h2>Welcome to The Union Dispatch</h2>
+              <h3>The home for your best pieces</h3>
+              <p className="union-dispatch-advertiser-text">
+                Whether it is an <strong>article, artwork or a video</strong>,
+                The Union Dispatch will be the home for your best content. Feel
+                free to submit your content using the Google Form for a chance
+                to be featured on The Union Dispatch, we will also feature your
+                new content on The Union Dispatch as well as on top on the
+                Featured Content section of this page
+              </p>
+              <div className="union-dispatch-tutorial">
+                <h4>Accessing The Union Dispatch</h4>
+                <p className="accessing-the-union-dispatch-text">
+                  Click on the icon{" "}
+                  <Article
+                    className="accessing-the-union-dispatch-text-icon"
+                    size={48}
+                  />{" "}
+                  shown on the navbar to go to The Union Dispatch
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer className="homepage-footer">
+          <div className="homepage-footer-content">
+            <h1>Expressive Arts Union</h1>
+            <div className="footer-contact-us">
+              <h2>Contact us</h2>
+              <p>
+                Follow our{" "}
+                <a href="http://instagram.com/expressiveartsunion">Instagram</a>
+              </p>
+              <p>
+                Send us an email at{" "}
+                <a href="mailto:expressiveartsunion@gmail.com">
+                  expressiveartsunion@gmail.com
+                </a>
+              </p>
+              <p>
+                View the site's source code on{" "}
+                <a href="http://github.com/harshpatel0/react-site">GitHub</a>
+              </p>
+            </div>
+          </div>
+        </footer>
+      </section>
     </>
   );
 }
