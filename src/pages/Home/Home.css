@@ -1,7 +1,10 @@
+* {
+  transition: all 0.5s;
+}
+
 .homepage-hero {
-  width: 100vw;
-  min-height: 95vh;
-  padding: 0 auto;
+  width: 100%;
+  min-height: 100vh;
   z-index: 2;
   position: relative;
   background-attachment: fixed;
@@ -9,6 +12,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
+
+  transition: all 0.5s;
 }
 
 .homepage-hero-content {
@@ -63,6 +68,7 @@
   margin-top: 5rem;
   border-radius: 10px;
   backdrop-filter: blur(100px);
+  transition: all 0.5s;
 }
 
 @keyframes floating {
@@ -82,7 +88,7 @@
   justify-content: center;
 
   padding-bottom: 10px;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   animation-name: floating;
   animation-duration: 3s;
   animation-iteration-count: infinite;
@@ -93,6 +99,140 @@
 
 .location-heading {
   z-index: 1;
+}
+
+.homepage-club-aim-vision {
+  margin: 0 auto; /* Centers horizontally */
+  padding-left: 6rem;
+  padding-right: 2rem;
+  width: 100%;
+  background-color: var(--eau-purple);
+  color: white;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  box-sizing: border-box;
+}
+
+.activities {
+  transition: all 0.5s;
+  border-top: 0px solid var(--eau-purple);
+}
+
+.activities:hover {
+  border-top: 2px solid var(--eau-purple);
+  padding-top: 0.5rem;
+}
+
+.club-vision {
+  padding-top: 2rem;
+}
+
+.activities-grid {
+  padding-left: 4.5rem;
+  padding-right: 0.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  width: auto;
+  gap: 0.25rem;
+}
+
+.activities-icon {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  transition: all 1s;
+}
+.activities > h3 {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.activities > p {
+  text-align: justify;
+  padding: 0.5rem;
+}
+
+.homepage-the-union-dispatch-blurb {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  padding-bottom: 1.5rem;
+
+  transition: all 0.5s;
+}
+
+.union-dispatch-section-content {
+  margin-left: 4rem;
+  margin-right: 2rem;
+}
+
+.homepage-hero-title > h3 {
+  font-size: 2rem;
+}
+
+.union-dispatch-tutorial {
+  margin-top: 4rem;
+}
+
+.union-dispatch-section-content {
+  margin-left: 6rem;
+  margin-top: 6rem;
+}
+
+.union-dispatch-section-content > h2 {
+  font-size: 4rem;
+}
+
+.union-dispatch-tutorial > h4 {
+  font-size: 2rem;
+}
+
+.union-dispatch-tutorial > p {
+  font-size: 1.5rem;
+}
+
+.union-dispatch-section-content > h3 {
+  font-size: 3rem;
+}
+
+.union-dispatch-section-content > p {
+  font-size: 1.5rem;
+}
+
+.union-dispatch-advertiser-text {
+  margin-top: 3rem;
+}
+
+.homepage-footer {
+  background-color: --var(--eau-purple);
+}
+
+.homepage-footer-content {
+  padding-left: 6rem;
+  padding-right: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.accessing-the-union-dispatch-text {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.accessing-the-union-dispatch-text-icon {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -119,5 +259,39 @@
     margin-top: 3rem;
     border-radius: 10px;
     backdrop-filter: blur(100px);
+  }
+  .homepage-footer-content {
+    padding: 5rem;
+    display: block;
+  }
+  .activities-grid {
+    display: block;
+  }
+  .union-dispatch-section-content {
+    margin-left: 4.5rem;
+  }
+
+  .union-dispatch-section-content > h2 {
+    font-size: 2rem;
+  }
+
+  .union-dispatch-tutorial > h4 {
+    font-size: 1.5rem;
+  }
+
+  .union-dispatch-tutorial > p {
+    font-size: 1rem;
+  }
+
+  .union-dispatch-section-content > h3 {
+    font-size: 1.75rem;
+  }
+
+  .union-dispatch-section-content > p {
+    font-size: 1rem;
+  }
+
+  .footer-contact-us {
+    margin-top: 2rem;
   }
 }
