@@ -1,0 +1,22 @@
+.footer {
+  background-color: --var(--eau-purple);
+}
+
+.footer-content {
+  padding-left: 6rem;
+  padding-right: 2rem;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media screen and (max-width: 600px) {
+  .footer-contact-us {
+    margin-top: 2rem;
+  }
+  .footer-content {
+    padding: 5rem;
+    display: block;
+  }
+}
