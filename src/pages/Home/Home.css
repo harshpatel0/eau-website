@@ -260,10 +260,7 @@
     border-radius: 10px;
     backdrop-filter: blur(100px);
   }
-  .homepage-footer-content {
-    padding: 5rem;
-    display: block;
-  }
+
   .activities-grid {
     display: block;
   }

@@ -1,5 +1,6 @@
 import NavBar from "../../components/Navbar/Navbar";
 import Heading from "../../components/Heading/Heading";
+import Footer from "../../components/Footer/Footer.jsx";
 
 import { useContext, useEffect, useState } from "react";
 
@@ -277,28 +278,7 @@ Film Presentations! Show off your favourite thriller, comedy and sci-fi to every
             </div>
           </div>
         </section>
-        <footer className="homepage-footer">
-          <div className="homepage-footer-content">
-            <h1>Expressive Arts Union</h1>
-            <div className="footer-contact-us">
-              <h2>Contact us</h2>
-              <p>
-                Follow our{" "}
-                <a href="http://instagram.com/expressiveartsunion">Instagram</a>
-              </p>
-              <p>
-                Send us an email at{" "}
-                <a href="mailto:expressiveartsunion@gmail.com">
-                  expressiveartsunion@gmail.com
-                </a>
-              </p>
-              <p>
-                View the site's source code on{" "}
-                <a href="http://github.com/harshpatel0/react-site">GitHub</a>
-              </p>
-            </div>
-          </div>
-        </footer>
+        <Footer />
       </section>
     </>
   );
