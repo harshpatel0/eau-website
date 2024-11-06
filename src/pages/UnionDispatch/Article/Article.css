@@ -1,0 +1,21 @@
+.rendered-article {
+  margin-top: 8rem;
+  margin-left: 4rem;
+
+  display: flex;
+  justify-self: center;
+}
+
+.after-markdown-render {
+  margin-top: 2rem;
+  margin-left: 6rem;
+}
+
+@media screen and (max-width: 600px) {
+  .rendered-article {
+    margin-top: 6rem;
+    display: block;
+    margin-left: 6rem;
+    padding-right: 1rem;
+  }
+}
