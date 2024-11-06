@@ -30,6 +30,7 @@ function Heading(props) {
   return (
     <div style={styles} className="location-heading">
       <h1>{props.headerText}</h1>
+      <p style={{ fontSize: "1.1rem" }}>{props.subText}</p>
     </div>
   );
 }
