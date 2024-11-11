@@ -8,6 +8,7 @@
   top: 20px;
   transition: all 1s;
   font-weight: normal;
+  z-index: 1;
 }
 
 @media screen and (max-width: 600px) {
