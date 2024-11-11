@@ -2,6 +2,8 @@ import NavBar from "../../components/Navbar/Navbar";
 import Heading from "../../components/Heading/Heading";
 import Footer from "../../components/Footer/Footer.jsx";
 
+import axios from "axios";
+
 import { useContext, useEffect, useState } from "react";
 
 import {
@@ -26,11 +28,14 @@ import "./Home.css";
 import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
 
 import ClubActivities from "./components/ClubActivities.jsx";
+import { baseUrl } from "../../veryglobalvars.js";
 
 function Home() {
   const { darkMode, toggleTheme } = useContext(DarkModeContext);
   const [quote, setQuote] = useState("");
   const [quoteCaption, setQuoteCaption] = useState("");
+
+  const [frontpageFeature, setFrontPageFeature] = useState("");
 
   const quotes = [
     {
@@ -57,6 +62,19 @@ function Home() {
 
   useEffect(() => {
     document.title = "The Expressive Arts Union";
+  }, []);
+
+  // Get Front Page Feature
+
+  useEffect(() => {
+    axios
+      .get(baseUrl + "/dynamiccontent/frontpage_feature")
+      .then(function (response) {
+        setFrontPageFeature(response.data[0].content);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }, []);
 
   function getRandomInteger() {
@@ -125,12 +143,9 @@ function Home() {
               </p>
             </div>
             <div className="homepage-hero-club-about">
+              {/* id: frontpage-feature */}
               <MarkdownRenderer
-                markdownContent="
-### Featured Post
-## The Second Day of the EAU
-Film Presentations! Show off your favourite thriller, comedy and sci-fi to everyone.
-            "
+                markdownContent={frontpageFeature}
               ></MarkdownRenderer>
             </div>
 
