@@ -14,6 +14,7 @@ a {
   color: var(--eau-purple);
   text-decoration: none;
   transition: all 0.5s;
+  border-bottom: 0px solid var(--eau-purple);
 }
 
 a:hover {
