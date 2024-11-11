@@ -1,56 +1,88 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+
+import axios from "axios";
 
 import Navbar from "../../../components/Navbar/Navbar";
 import Heading from "../../../components/Heading/Heading";
 import Footer from "../../../components/Footer/Footer";
 import MarkdownRenderer from "../../../components/MarkdownRenderer/MarkdownRenderer";
+import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen";
+
+import { baseUrl } from "../../../veryglobalvars";
 
 import "./Article.css";
 
+let title = "";
+let content = ``;
+
+let authorName = "";
+let tagline = ``;
+
+let email = "";
+
+let doesArticleExist = true;
+
 function Article() {
   const { articleId } = useParams();
+  const navigate = useNavigate();
 
-  const { articleControls, setArticleControls } = useState({});
+  const [articleControls, setArticleControls] = useState({});
+  const [loadingState, setLoadingState] = useState(false);
 
-  // Maybe from the ID I can get the title and author from the DB and toss it on the title
-  const title = "";
-  const content = ``;
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState(``);
+  const [authorName, setAuthorName] = useState("");
+  const [tagline, setTagline] = useState(``);
+  const [email, setEmail] = useState("");
 
-  const author = "";
-  const tagline = ``;
+  // Get Data from Db
+  useEffect(() => {
+    console.log("Fetching Article Details");
+    setLoadingState(false);
+    axios
+      .get(baseUrl + `/articles/${articleId}`)
+      .then(function (response) {
+        let data = response.data[0];
+        console.log(data.author_name);
 
-  const doesArticleExist = true; // If false, redirect to a 404 page you definately will male
+        setTitle(data.title);
+        setAuthorName(data.author_name);
+        setContent(data.content);
+        setTagline(data.tagline);
+        setEmail(data.email);
+
+        setLoadingState(true);
+      })
+      .catch(function (error) {
+        console.log(error);
+
+        let error_status = error.response.status;
+        if ((error_status = 404)) {
+          navigate("*");
+        }
+      });
+  }, []);
 
   useEffect(() => {
     document.title = title;
-  }, []);
+  }, [title]);
 
   return (
     <>
+      <LoadingScreen loadingtext="Loading Article" done={loadingState} />
+
       <Navbar />
-      <Heading headerText={title} subText={`By ${author}`} />
+      <Heading headerText={title} subText={`By ${authorName}`} />
 
       <div style={{ width: "80%" }} className="rendered-article">
-        <MarkdownRenderer markdownContent={markdownContent} />
+        <MarkdownRenderer markdownContent={content} />
       </div>
       <div className="after-markdown-render">
         <blockquote>
-          <strong>By {author}</strong>
-          <MarkdownRenderer />
+          <strong>By {authorName}</strong>
+          <MarkdownRenderer markdownContent={tagline} />
         </blockquote>
-        <code>
-          <pre>Article ID: {articleId}</pre>
-          <pre>Title: {title}</pre>
-          <pre>Author: {author}</pre>
-          <pre>doesArticleExist: {doesArticleExist ? "True" : "False"}</pre>
-          {/* Does Article Exist will be a flag, when false, the user will be
-        redirected to the 404 page. Just query the DB and if something comes
-        back, good, if error comes back, then send to 404 page. Figure this out
-        sometime later And do not use the ID as the title, that's just asking
-        for problems, yes it is possible and yes you can add spaces and you can
-        even sugarcoat it and parse it to add the author but you dare */}
-        </code>
       </div>
       <Footer />
     </>
