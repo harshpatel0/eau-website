@@ -115,10 +115,6 @@ main {
   font-size: 1rem;
 }
 
-.articles-list-item:hover {
-  border-bottom: 4px solid var(--eau-purple);
-}
-
 @media screen and (max-width: 600px) {
   .hero-p {
     font-size: 2.5rem;
