@@ -53,10 +53,6 @@ function Home() {
       quote: "Its never that deep.",
       caption: "Keval Patel, Coordinator",
     },
-    {
-      quote: "From the screen to the ring to the pen to the king",
-      caption: "Smash through the ceiling cause I'm reaching for the stars",
-    },
   ];
 
   useEffect(() => {
