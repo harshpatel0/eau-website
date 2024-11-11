@@ -19,7 +19,7 @@ function Footer() {
           </p>
           <p>
             View the site's source code on{" "}
-            <a href="http://github.com/harshpatel0/react-site">GitHub</a>
+            <a href="http://github.com/harshpatel0/eau-website">GitHub</a>
           </p>
         </div>
       </div>
