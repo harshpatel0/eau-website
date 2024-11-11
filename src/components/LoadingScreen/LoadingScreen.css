@@ -1,0 +1,49 @@
+.loading-screen {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: var(--eau-purple-dark);
+  overflow: hidden;
+}
+
+.fader {
+  animation: fadeaway 1.5s linear infinite;
+  animation-iteration-count: 1; /* Change this to 'infinite' to loop */
+  animation-fill-mode: forwards;
+}
+
+.loading-content {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+
+  100% {
+    rotate: 360deg;
+  }
+}
+
+@keyframes fadeaway {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
