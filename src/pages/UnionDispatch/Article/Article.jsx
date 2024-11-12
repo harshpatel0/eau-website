@@ -70,7 +70,11 @@ function Article() {
 
   return (
     <>
-      <LoadingScreen loadingtext="Loading Article" done={loadingState} />
+      <LoadingScreen
+        loadingText="Loading Article"
+        loadingSubText="Retrieving Article Content"
+        done={loadingState}
+      />
 
       <Navbar />
       <Heading headerText={title} subText={`By ${authorName}`} />
