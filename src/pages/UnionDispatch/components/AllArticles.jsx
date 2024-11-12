@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 
-import { baseUrl } from "../../../veryglobalvars";
+import { apiBaseUrl } from "../../../veryglobalvars";
 
 function AllArticles(props) {
   const [articles, setArticles] = useState([]);
@@ -15,7 +15,7 @@ function AllArticles(props) {
 
   useEffect(() => {
     axios
-      .get(baseUrl + "/articles/all")
+      .get(apiBaseUrl + "/articles/all")
       .then(function (response) {
         setArticles(response.data);
       })

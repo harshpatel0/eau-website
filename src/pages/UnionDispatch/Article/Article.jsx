@@ -9,7 +9,7 @@ import Footer from "../../../components/Footer/Footer";
 import MarkdownRenderer from "../../../components/MarkdownRenderer/MarkdownRenderer";
 import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen";
 
-import { baseUrl } from "../../../veryglobalvars";
+import { apiBaseUrl } from "../../../veryglobalvars";
 
 import "./Article.css";
 
@@ -41,7 +41,7 @@ function Article() {
     console.log("Fetching Article Details");
     setLoadingState(false);
     axios
-      .get(baseUrl + `/articles/${articleId}`)
+      .get(apiBaseUrl + `/articles/${articleId}`)
       .then(function (response) {
         let data = response.data[0];
         console.log(data.author_name);
