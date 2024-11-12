@@ -13,6 +13,9 @@ nav {
   z-index: 4;
   transition: all 0.5s;
   overflow: hidden;
+
+  -webkit-backdrop-filter: blur(100px);
+  /* Because Safari doesnt support backdrop-filter */
 }
 
 nav > .icons {
