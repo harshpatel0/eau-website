@@ -16,12 +16,14 @@
 }
 
 .loading-content {
-  width: 100vw;
+  width: calc(100vh-8rem);
   height: 100vh;
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .loading-spinner {
