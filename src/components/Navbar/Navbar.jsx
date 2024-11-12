@@ -4,7 +4,6 @@ import {
   Article,
   Sun,
   MoonStars,
-  TestTube,
 } from "@phosphor-icons/react";
 
 import { useContext } from "react";
@@ -33,7 +32,7 @@ function Navbar(props) {
         </div>
 
         <div className="icons">
-          <Link to="/uniondispatch">
+          <Link replace={true} to="/uniondispatch">
             <Article alt="The Union Dispatch" className="icons" />
           </Link>
         </div>
@@ -52,14 +51,14 @@ function Navbar(props) {
           />
         )}
 
-        <div className="icons">
+        {/* <div className="icons">
           <Link to="/uniondispatch/testpage">
             <TestTube
               className="icons"
               alt="Go to test page, nothing cool there, just testing stuff"
             />
           </Link>
-        </div>
+        </div> */}
       </IconContext.Provider>
     </nav>
   );
