@@ -91,6 +91,7 @@ function UnionDispatch() {
       <LoadingScreen
         done={loadingState}
         loadingText="Loading The Union Dispatch"
+        loadingSubText="Getting the latest of your publications"
       />
     </>
   );
