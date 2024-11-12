@@ -33,18 +33,18 @@ export const DarkModeProvider = ({ children }) => {
     // Set in LocalStorage
     window.localStorage.setItem("darkMode", JSON.stringify(darkMode));
 
-    if (darkMode == true) {
-      document.getElementById("body-element").classList.add("app-dark");
-      document.getElementById("html-element").classList.add("app-dark");
+    if (darkMode) {
+      document.body.classList.add("app-dark");
+      document.documentElement.classList.add("app-dark");
 
-      document.getElementById("body-element").classList.remove("app-light");
-      document.getElementById("html-element").classList.remove("app-light");
+      document.body.classList.remove("app-light");
+      document.documentElement.classList.remove("app-light");
     } else {
-      document.getElementById("body-element").classList.add("app-light");
-      document.getElementById("html-element").classList.add("app-light");
+      document.body.classList.add("app-light");
+      document.documentElement.classList.add("app-light");
 
-      document.getElementById("body-element").classList.remove("app-dark");
-      document.getElementById("html-element").classList.remove("app-dark");
+      document.body.classList.remove("app-dark");
+      document.documentElement.classList.remove("app-dark");
     }
   }, [darkMode]);
 
