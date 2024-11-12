@@ -1,5 +1,4 @@
 import { UserCircle } from "@phosphor-icons/react";
-import { useEffect } from "react";
 import PropTypes from "prop-types";
 
 function HeroSection(props) {
