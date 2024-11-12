@@ -14,14 +14,9 @@ import "./UnionDispatch.css";
 
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
 
-// Other Assets
-import SunkenShipBackgroundImage from "../../assets/images/SunkenSwamp.jpg";
-import Crashed from "../../assets/images/Crashed.jpg";
-import NewYork from "../../assets/images/NewYork.jpg";
-
 // Contexts
 import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
-import { baseUrl } from "../../veryglobalvars.js";
+import { apiBaseUrl } from "../../veryglobalvars.js";
 
 function UnionDispatch() {
   const { ref, inView: inFeaturedArticles } = useInView({
@@ -35,7 +30,7 @@ function UnionDispatch() {
   function getArticleData() {
     console.log("Getting Article Data");
     axios
-      .get(baseUrl + "/articles/featured")
+      .get(apiBaseUrl + "/articles/featured")
       .then(function (response) {
         setFeaturedArticlesData(response.data);
         console.log(featuredArticlesData);

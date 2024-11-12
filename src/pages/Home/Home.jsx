@@ -1,11 +1,5 @@
-import NavBar from "../../components/Navbar/Navbar";
-import Heading from "../../components/Heading/Heading";
-import Footer from "../../components/Footer/Footer.jsx";
-
 import axios from "axios";
-
 import { useContext, useEffect, useState } from "react";
-
 import {
   IconContext,
   InstagramLogo,
@@ -20,6 +14,11 @@ import {
   Article,
 } from "@phosphor-icons/react";
 
+import NavBar from "../../components/Navbar/Navbar";
+import Heading from "../../components/Heading/Heading";
+import Footer from "../../components/Footer/Footer.jsx";
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
+
 import HeroImage from "../../assets/images/pexels-anete-lusina-6331086.jpg";
 import UnionDispatchImage from "../../assets/images/single-earth-ApivzPERunU-unsplash.jpg";
 import MarkdownRenderer from "../../components/MarkdownRenderer/MarkdownRenderer";
@@ -28,7 +27,7 @@ import "./Home.css";
 import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
 
 import ClubActivities from "./components/ClubActivities.jsx";
-import { baseUrl } from "../../veryglobalvars.js";
+import { apiBaseUrl } from "../../veryglobalvars.js";
 
 function Home() {
   const { darkMode, toggleTheme } = useContext(DarkModeContext);
@@ -36,6 +35,7 @@ function Home() {
   const [quoteCaption, setQuoteCaption] = useState("");
 
   const [frontpageFeature, setFrontPageFeature] = useState("");
+  const [loadingDone, setLoadingDone] = useState(false);
 
   const quotes = [
     {
@@ -60,22 +60,24 @@ function Home() {
     },
   ];
 
-  useEffect(() => {
-    document.title = "The Expressive Arts Union";
-  }, []);
-
   // Get Front Page Feature
 
-  useEffect(() => {
+  function getFrontPageFeaturedText() {
     axios
-      .get(baseUrl + "/dynamiccontent/frontpage_feature")
+      .get(apiBaseUrl + "/dynamiccontent/frontpage_feature")
       .then(function (response) {
         setFrontPageFeature(response.data[0].content);
       })
       .catch(function (error) {
         console.log(error);
       });
-  }, []);
+  }
+
+  useEffect(() => {
+    if ((frontpageFeature != "") & (quote != "")) {
+      setLoadingDone(true);
+    }
+  }, [frontpageFeature, quote]);
 
   function getRandomInteger() {
     return Math.floor(Math.random() * (quotes.length - 0));
@@ -93,11 +95,19 @@ function Home() {
   }
 
   useEffect(() => {
+    document.title = "The Expressive Arts Union";
+
+    getFrontPageFeaturedText();
     chooseQuote();
   }, []);
 
   return (
     <>
+      <LoadingScreen
+        done={loadingDone}
+        loadingText="Welcome to the Expressive Arts Union"
+        loadingSubText="We are getting the site ready for you."
+      />
       <NavBar />
       <Heading
         headerText="Expressive Arts Union"
