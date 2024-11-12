@@ -19,8 +19,9 @@ import Heading from "../../components/Heading/Heading";
 import Footer from "../../components/Footer/Footer.jsx";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
 
-import HeroImage from "../../assets/images/pexels-anete-lusina-6331086.jpg";
-import UnionDispatchImage from "../../assets/images/single-earth-ApivzPERunU-unsplash.jpg";
+import HeroImage from "../../assets/images/pexels-anete-lusina-6331086.webp";
+import UnionDispatchImage from "../../assets/images/single-earth-ApivzPERunU-unsplash.webp";
+
 import MarkdownRenderer from "../../components/MarkdownRenderer/MarkdownRenderer";
 import "./Home.css";
 
@@ -37,6 +38,7 @@ function Home() {
   const [frontpageFeature, setFrontPageFeature] = useState("");
   const [loadingDone, setLoadingDone] = useState(false);
 
+  // Soon to be in DB
   const quotes = [
     {
       quote: "Make a choice, oxygen or WiFi",
@@ -51,8 +53,9 @@ function Home() {
       caption: "Jeremy Mwangi, CSO",
     },
     {
-      quote: "Make sure to check under your bed before sleeping",
-      caption: "Harsh Patel, Vice President",
+      quote:
+        "Even if you're not always ready for the day, it can not always be night",
+      caption: "Chebeni Musundi, President",
     },
     {
       quote: "Its never that deep.",
