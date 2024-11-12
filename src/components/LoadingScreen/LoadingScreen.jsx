@@ -1,5 +1,5 @@
-import { IconContext, CircleNotch } from "@phosphor-icons/react";
 import { useContext, useEffect } from "react";
+import { CircleNotch } from "@phosphor-icons/react";
 import { DarkModeContext } from "../../contexts/DarkModeContext";
 
 import "./LoadingScreen.css";
@@ -24,7 +24,8 @@ function LoadingScreen(props) {
             color={darkMode ? "white" : "black"}
             weight="bold"
           />
-          <h1>{props.loadingtext}</h1>
+          <h1>{props.loadingText}</h1>
+          <h2>{props.loadingSubText}</h2>
           <p>Please Wait</p>
         </div>
       </div>
