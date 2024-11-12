@@ -3,9 +3,6 @@ import { useEffect } from "react";
 import PropTypes from "prop-types";
 
 function HeroSection(props) {
-  useEffect(() => {
-    console.log(props);
-  }, []);
   return (
     <section
       style={{ backgroundImage: `url(${props.image})` }}
