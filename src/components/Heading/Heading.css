@@ -2,13 +2,14 @@
   position: fixed;
   padding: 1rem;
   font-size: 0.75rem;
-  backdrop-filter: blur(1000px);
+  backdrop-filter: blur(100px);
   font-weight: bold;
   left: 5rem;
   top: 20px;
   transition: all 1s;
   font-weight: normal;
   z-index: 1;
+  -webkit-backdrop-filter: blur(100px);
 }
 
 @media screen and (max-width: 600px) {
