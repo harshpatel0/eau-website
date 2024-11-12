@@ -1,8 +1,16 @@
+import { DarkModeContext } from "../../contexts/DarkModeContext";
+import { useContext } from "react";
+
 import "./Footer.css";
 
 function Footer() {
+  const { darkMode, toggleTheme } = useContext(DarkModeContext);
+
   return (
-    <footer className="footer">
+    <footer
+      style={{ backgroundColor: darkMode ? "#282828" : "#D3D3D3" }}
+      className="footer"
+    >
       <div className="footer-content">
         <h1>Expressive Arts Union</h1>
         <div className="footer-contact-us">
