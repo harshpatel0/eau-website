@@ -1,6 +1,7 @@
 .rendered-article {
   margin-top: 8rem;
   margin-left: 4rem;
+  margin-right: 1rem;
 
   display: flex;
   justify-self: center;
@@ -9,6 +10,7 @@
 .after-markdown-render {
   margin-top: 2rem;
   margin-left: 6rem;
+  padding-bottom: 2rem;
 }
 
 @media screen and (max-width: 600px) {
