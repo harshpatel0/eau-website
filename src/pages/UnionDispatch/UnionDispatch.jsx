@@ -1,6 +1,8 @@
 // Libraries
 import React, { useState, useEffect, useRef, useContext } from "react";
 import { useInView } from "react-intersection-observer";
+import axios from "axios";
+import { Link, useLocation } from "react-router-dom";
 
 // Components
 import Navbar from "../../components/Navbar/Navbar.jsx";
@@ -10,6 +12,8 @@ import AllArticles from "./components/AllArticles.jsx";
 import "../../App.css";
 import "./UnionDispatch.css";
 
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
+
 // Other Assets
 import SunkenShipBackgroundImage from "../../assets/images/SunkenSwamp.jpg";
 import Crashed from "../../assets/images/Crashed.jpg";
@@ -17,19 +21,40 @@ import NewYork from "../../assets/images/NewYork.jpg";
 
 // Contexts
 import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
+import { baseUrl } from "../../veryglobalvars.js";
 
 function UnionDispatch() {
   const { ref, inView: inFeaturedArticles } = useInView({
     threshold: 0.1,
   });
+  const { darkMode, toggleTheme } = useContext(DarkModeContext);
+  const [loadingState, setLoadingState] = useState(false);
+  const [featuredArticlesData, setFeaturedArticlesData] = useState([]);
+  const location = useLocation(); // Hook to access location changes
+
+  function getArticleData() {
+    console.log("Getting Article Data");
+    axios
+      .get(baseUrl + "/articles/featured")
+      .then(function (response) {
+        setFeaturedArticlesData(response.data);
+        console.log(featuredArticlesData);
+        setTimeout(() => {
+          setLoadingState(true);
+        }, 1500);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
   const page_title = "The Union Dispatch";
 
   useEffect(() => {
+    console.log("Initial Code Running");
     document.title = page_title;
-  }, []);
-
-  const { darkMode, toggleTheme } = useContext(DarkModeContext);
+    getArticleData();
+  }, [location]);
 
   // This state variable is used to tell if the hero sections are visible, if all hero sections are not visible anymore, then we will set it to false
   return (
@@ -47,24 +72,31 @@ function UnionDispatch() {
         className="flex-container"
       >
         <div ref={ref} className="hero-content">
-          <HeroSection
-            title="Plants and their answer to life"
-            author="Harsh Patel"
-            image={SunkenShipBackgroundImage}
-          />
-          <HeroSection
-            title="Plane Crash"
-            author="John from Crashed!"
-            image={Crashed}
-          />
-          <HeroSection
-            title="Metropolitan Jungle"
-            author="Alex from Visit New York"
-            image={NewYork}
-          />
+          {featuredArticlesData.map((article) => (
+            <Link
+              to={`/uniondispatch/articles/${article.article_id}`}
+              key={article.article_id}
+            >
+              <div
+                key={article.article_id}
+                onClick={() => handleArticleClick(article.article_id)}
+              >
+                <HeroSection
+                  title={article.title}
+                  author={article.author_name}
+                  image={article.image_url}
+                />
+              </div>
+            </Link>
+          ))}
         </div>
+
         <AllArticles darkMode={darkMode} ref={ref} />
       </main>
+      <LoadingScreen
+        done={loadingState}
+        loadingText="Loading The Union Dispatch"
+      />
     </>
   );
 }
