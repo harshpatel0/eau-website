@@ -106,6 +106,8 @@ main {
   padding: 1rem;
   scroll-snap-align: center;
   font-weight: normal;
+  list-style-type: none;
+
   transition: all 2s;
 }
 .articles-list-item > h2 {
