@@ -1,22 +1,19 @@
-// Libraries
-import React, { useState, useEffect, useRef, useContext } from "react";
-import { useInView } from "react-intersection-observer";
 import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
-
-// Components
-import Navbar from "../../components/Navbar/Navbar.jsx";
-import HeroSection from "./components/HeroSection.jsx";
-import Heading from "../../components/Heading/Heading.jsx";
-import AllArticles from "./components/AllArticles.jsx";
-import "../../App.css";
-import "./UnionDispatch.css";
-
-import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
-
-// Contexts
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
+import { useInView } from "react-intersection-observer";
+
+import AllArticles from "./components/AllArticles.jsx";
+import Heading from "../../components/Heading/Heading.jsx";
+import HeroSection from "./components/HeroSection.jsx";
+import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
+import Navbar from "../../components/Navbar/Navbar.jsx";
+
 import { apiBaseUrl } from "../../veryglobalvars.js";
+
+import "./UnionDispatch.css";
+import "../../App.css";
 
 function UnionDispatch() {
   const { ref, inView: inFeaturedArticles } = useInView({
@@ -25,18 +22,18 @@ function UnionDispatch() {
   const { darkMode, toggleTheme } = useContext(DarkModeContext);
   const [loadingState, setLoadingState] = useState(false);
   const [featuredArticlesData, setFeaturedArticlesData] = useState([]);
+  const [isArticlePublic, setIsArticlePublic] = useState(true);
+
   const location = useLocation(); // Hook to access location changes
 
   function getArticleData() {
-    console.log("Getting Article Data");
     axios
       .get(apiBaseUrl + "/articles/featured")
       .then(function (response) {
         setFeaturedArticlesData(response.data);
-        console.log(featuredArticlesData);
         setTimeout(() => {
           setLoadingState(true);
-        }, 1500);
+        }, 2000);
       })
       .catch(function (error) {
         console.log(error);
@@ -67,23 +64,27 @@ function UnionDispatch() {
         className="flex-container"
       >
         <div ref={ref} className="hero-content">
-          {featuredArticlesData.map((article) => (
-            <Link
-              to={`/uniondispatch/articles/${article.article_id}`}
-              key={article.article_id}
-            >
-              <div
+          {featuredArticlesData.map((article) =>
+            article.public === "1" ? (
+              <Link
+                to={`/uniondispatch/articles/${article.article_id}`}
                 key={article.article_id}
-                onClick={() => handleArticleClick(article.article_id)}
               >
-                <HeroSection
-                  title={article.title}
-                  author={article.author_name}
-                  image={article.image_url}
-                />
-              </div>
-            </Link>
-          ))}
+                <div
+                  key={article.article_id}
+                  onClick={() => handleArticleClick(article.article_id)}
+                >
+                  <HeroSection
+                    title={article.title}
+                    author={article.author_name}
+                    image={article.image_url}
+                  />
+                </div>
+              </Link>
+            ) : (
+              <></>
+            )
+          )}
         </div>
 
         <AllArticles darkMode={darkMode} ref={ref} />
