@@ -2,7 +2,7 @@
   position: fixed;
   padding: 1rem;
   font-size: 0.75rem;
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(100px) invert(1);
   font-weight: bold;
   left: 5rem;
   top: 20px;
@@ -10,6 +10,12 @@
   font-weight: normal;
   z-index: 1;
   -webkit-backdrop-filter: blur(100px);
+  /* filter: brightness(70%); */
+}
+
+.heading-text,
+.heading-subtext {
+  mix-blend-mode: difference;
 }
 
 @media screen and (max-width: 600px) {
