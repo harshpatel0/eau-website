@@ -113,6 +113,15 @@
   box-sizing: border-box;
 }
 
+.club-activities-header {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-top: 1rem;
+  padding-left: 4rem;
+}
+
 .activities {
   transition: all 0.5s;
   border-top: 0px solid var(--eau-purple);
@@ -155,6 +164,22 @@
   padding: 0.5rem;
 }
 
+.learn-more-about-club-activities-article-call-to-action-section {
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-bottom: 2rem;
+}
+
+.link-to-club-activities-article {
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-self: center;
+  border-radius: 20px;
+  font-size: 1rem;
+  background-color: var(--eau-purple);
+}
+
 .homepage-the-union-dispatch-blurb {
   width: 100%;
   min-height: 100vh;
@@ -188,7 +213,7 @@
 }
 
 .union-dispatch-section-content > h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
 }
 
 .union-dispatch-tutorial > h4 {
@@ -200,7 +225,7 @@
 }
 
 .union-dispatch-section-content > h3 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 .union-dispatch-section-content > p {
@@ -233,6 +258,55 @@
 .accessing-the-union-dispatch-text-icon {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+
+.meet-the-exec-board {
+  padding-left: 5rem;
+}
+
+.meet-the-exec-board-heading {
+  font-size: 2rem;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.exec-members {
+  padding-bottom: 1rem;
+  padding: 0.25rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.exec-member {
+  text-align: center;
+  padding-bottom: 1rem;
+  width: 15rem;
+  transition: all 1s;
+  border: 0px solid var(--eau-purple);
+}
+
+.meet-the-exec-blurb {
+  display: flex;
+  justify-self: center;
+  text-align: center;
+  width: 80%;
+  padding-bottom: 1rem;
+}
+
+.exec-member:hover {
+  border-top: 2px solid var(--eau-purple);
+  margin: 1rem;
+  padding: 1rem;
+  width: 20rem;
+}
+
+.meet-the-exec-board-picture {
+  width: 10rem;
+  height: 10rem;
+  aspect-ratio: 1/1;
+  border-radius: 100%;
 }
 
 @media screen and (max-width: 600px) {
@@ -290,5 +364,18 @@
 
   .footer-contact-us {
     margin-top: 2rem;
+  }
+  .exec-member {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin: 0 auto;
+    padding-right: 1.5rem;
+
+    width: auto;
+  }
+  .meet-the-exec-blurb {
+    margin: 0 auto;
+    width: auto;
+    padding-right: 2rem;
   }
 }
