@@ -1,17 +1,15 @@
+import "./Article.css";
+
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-import axios from "axios";
-
-import Navbar from "../../../components/Navbar/Navbar";
-import Heading from "../../../components/Heading/Heading";
 import Footer from "../../../components/Footer/Footer";
-import MarkdownRenderer from "../../../components/MarkdownRenderer/MarkdownRenderer";
+import Heading from "../../../components/Heading/Heading";
 import LoadingScreen from "../../../components/LoadingScreen/LoadingScreen";
-
+import MarkdownRenderer from "../../../components/MarkdownRenderer/MarkdownRenderer";
+import Navbar from "../../../components/Navbar/Navbar";
 import { apiBaseUrl } from "../../../veryglobalvars";
-
-import "./Article.css";
+import axios from "axios";
 
 let title = "";
 let content = ``;
@@ -38,13 +36,11 @@ function Article() {
 
   // Get Data from Db
   useEffect(() => {
-    console.log("Fetching Article Details");
     setLoadingState(false);
     axios
       .get(apiBaseUrl + `/articles/${articleId}`)
       .then(function (response) {
         let data = response.data[0];
-        console.log(data.author_name);
 
         setTitle(data.title);
         setAuthorName(data.author_name);
