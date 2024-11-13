@@ -17,7 +17,9 @@ function Footer() {
           <h2>Contact us</h2>
           <p>
             Follow our{" "}
-            <a href="http://instagram.com/expressiveartsunion">Instagram</a>
+            <a target="_blank" href="http://instagram.com/expressiveartsunion">
+              Instagram
+            </a>
           </p>
           <p>
             Send us an email at{" "}
@@ -27,7 +29,9 @@ function Footer() {
           </p>
           <p>
             View the site's source code on{" "}
-            <a href="http://github.com/harshpatel0/eau-website">GitHub</a>
+            <a target="_blank" href="http://github.com/harshpatel0/eau-website">
+              GitHub
+            </a>
           </p>
         </div>
       </div>
