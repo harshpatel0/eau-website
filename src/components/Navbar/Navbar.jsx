@@ -1,22 +1,31 @@
-import {
-  IconContext,
-  House,
-  Article,
-  Sun,
-  MoonStars,
-} from "@phosphor-icons/react";
-
-import { useContext } from "react";
-import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
-
 import "./Navbar.css";
 
+import {
+  Article,
+  House,
+  IconContext,
+  MoonStars,
+  Sun,
+} from "@phosphor-icons/react";
+
+import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
 
 function Navbar(props) {
   const { darkMode, toggleTheme } = useContext(DarkModeContext);
   return (
-    <nav className="navbar">
+    <nav
+      style={{
+        backdropFilter: darkMode
+          ? "blur(100px) brightness(70%)"
+          : "blur(100px) brightness(90%)",
+        WebkitBackdropFilter: darkMode
+          ? "blur(100px) brightness(70%)"
+          : "blur(100px) brightness(90%)",
+      }}
+      className="navbar"
+    >
       <IconContext.Provider
         value={{
           color: darkMode ? "white" : "black",
