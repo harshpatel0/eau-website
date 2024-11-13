@@ -1,34 +1,44 @@
-import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+// Libararies
 import {
+  Article,
+  CaretDown,
+  Envelope,
+  Gavel,
   IconContext,
   InstagramLogo,
-  Envelope,
-  CaretDown,
-  Palette,
-  VinylRecord,
-  Pencil,
   MaskHappy,
-  Gavel,
+  Palette,
+  Pencil,
   Presentation,
-  Article,
+  VinylRecord,
 } from "@phosphor-icons/react";
+import { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
+import axios from "axios";
 
+// Components
 import NavBar from "../../components/Navbar/Navbar";
 import Heading from "../../components/Heading/Heading";
 import Footer from "../../components/Footer/Footer.jsx";
+import ClubActivities from "./components/ClubActivities.jsx";
+import ExecMember from "./components/ExecMember.jsx";
+import MarkdownRenderer from "../../components/MarkdownRenderer/MarkdownRenderer";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
 
+// Assets
 import HeroImage from "../../assets/images/pexels-anete-lusina-6331086.webp";
 import UnionDispatchImage from "../../assets/images/single-earth-ApivzPERunU-unsplash.webp";
+import AryaExecutiveBoardPicture from "../../assets/exec_images/arya.png";
+import ChebeniExecutiveBoardPicture from "../../assets/exec_images/chebeni.png";
+import HarshExecutiveBoardPicture from "../../assets/exec_images/harsh.png";
+import JoanExecutiveBoardPicture from "../../assets/exec_images/joan.png";
+import KevalExecutiveBoardPicture from "../../assets/exec_images/keval.png";
 
-import MarkdownRenderer from "../../components/MarkdownRenderer/MarkdownRenderer";
-import "./Home.css";
-
-import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
-
-import ClubActivities from "./components/ClubActivities.jsx";
 import { apiBaseUrl } from "../../veryglobalvars.js";
+import { quotes } from "./quotes.js";
+
+import "./Home.css";
 
 function Home() {
   const { darkMode, toggleTheme } = useContext(DarkModeContext);
@@ -37,31 +47,6 @@ function Home() {
 
   const [frontpageFeature, setFrontPageFeature] = useState("");
   const [loadingDone, setLoadingDone] = useState(false);
-
-  // Soon to be in DB
-  const quotes = [
-    {
-      quote: "Make a choice, oxygen or WiFi",
-      caption: "Chebeni Musundi, President",
-    },
-    {
-      quote: "Site made with cello tape and cardboard",
-      caption: "Harsh Patel, Vice President",
-    },
-    {
-      quote: "Upholding Security 👮🚓",
-      caption: "Jeremy Mwangi, CSO",
-    },
-    {
-      quote:
-        "Even if you're not always ready for the day, it can not always be night",
-      caption: "Chebeni Musundi, President",
-    },
-    {
-      quote: "Its never that deep.",
-      caption: "Keval Patel, Coordinator",
-    },
-  ];
 
   // Get Front Page Feature
 
@@ -78,7 +63,9 @@ function Home() {
 
   useEffect(() => {
     if ((frontpageFeature != "") & (quote != "")) {
-      setLoadingDone(true);
+      setTimeout(() => {
+        setLoadingDone(true);
+      }, 1000);
     }
   }, [frontpageFeature, quote]);
 
@@ -92,9 +79,6 @@ function Home() {
     let quoteObject = quotes[quoteChosen];
     setQuote(quoteObject.quote);
     setQuoteCaption(quoteObject.caption);
-
-    console.log(quoteObject);
-    console.log(quoteChosen);
   }
 
   useEffect(() => {
@@ -194,6 +178,9 @@ function Home() {
             </p>
           </div>
         </section>
+        <div className="club-activities-header">
+          <h1>Club Activities</h1>
+        </div>
         <section className="activities-grid">
           <IconContext.Provider
             value={{
@@ -205,58 +192,29 @@ function Home() {
           >
             <ClubActivities
               title="Music"
-              // description="
-              //   The beat of your heart, the snap of your thumb the sound of the
-              //   wind, the hallow in your speech listen and relate, rhythm and
-              //   lyric date. From the artistry of rap to the cadence of pop, this
-              //   category offers you the chance to compose music, analyze lyrics,
-              //   and explore the messages conveyed through music from the 19th
-              //   century to the 21st century."
               description="The beat of your heart, the snap of your thumb, the sound of the wind, the hollow in your speech—listen and relate as rhythm meets lyric. From rap to pop, this category invites you to compose, analyze, and explore the messages in music from the 19th to the 21st century."
               iconComponent={<VinylRecord className="activities-icon" />}
             />
             <ClubActivities
               title="Film and Theatrical"
-              // description="
-              //   Films & theatricals. A drama may unfold as a story is told an act put on screen as life rolls through scenes.
-              //   The films and theatricals department offers an opportunity to discuss your favourite movies and receive recommendations for intriguing films to explore.
-              //   It also provides a platform to write scripts and stage complete plays.
-              //   The possibilities for creation and collaboration in the theatrical realm are endless."
               description="Films & Theatricals. As stories unfold and life rolls through scenes, this category lets you dive into favorite films, explore new recommendations, and craft your own scripts and plays. The possibilities for creativity and collaboration are endless."
               iconComponent={<MaskHappy className="activities-icon" />}
             />
 
             <ClubActivities
               title="Art"
-              // description="
-              //   Paint me the emotions I cannot seem to speak, sketch my inner pain that hides my crystal cry mould my true character on a canvas that's pretty clear draw a sea of words that I could never speak out here.
-              //   There are various mediums of art, such as painting, photography, and sculpture.
-              //   This category broadens your creative scope, allowing you to make and express, while also encouraging analysis and understanding of the messages behind the artwork"
               description="Paint the emotions I can’t voice, sketch hidden pain, mold my true character on a clear canvas, and draw a sea of words I dare not speak. With mediums like painting, photography, and sculpture, this category expands your creative reach, inviting both creation and deeper understanding of the messages within art."
               iconComponent={<Palette className="activities-icon" />}
             />
 
             <ClubActivities
               title="Writing"
-              // description="
-              // When words are hard to articulate, a vessel of expression is in the quake.
-              // When books are a source of an escape or poetry a ballad to embrace paint the prose, haze the emotion.
-              // In the category of writing, you are provided with the creative opportunity to explore, develop, and showcase your literary talents.
-              // Whether you choose to craft a book, poem, short story, or any other form of writing, you have the freedom to delve into various genres, from fantasy to action and beyond."
               description="When words are hard to articulate, writing becomes a vessel of expression, with books as escapes and poetry as ballads to embrace. This category offers you the freedom to explore, develop, and showcase your literary talents—whether through books, poems, short stories, or any genre from fantasy to action and beyond."
               iconComponent={<Pencil className="activities-icon" />}
             />
 
             <ClubActivities
               title="Debating"
-              // description="
-              // We have the right to speech, the right to critic.
-              // Your opinion is your blade sharp with conviction without delay,
-              // So why not join the debate in this category, a wide range of topics,
-              // from peaceful to controversial topics, are open for endless discussion.
-              // Whatever you are deeply passionate about and strongly support can be debated and encouraged.
-              // Issues are considered, and solutions may emerge, all within this area.
-              // "
               description="We have the right to speak, the right to critique—your opinion is a blade sharp with conviction. Join this category to debate topics ranging from peaceful to controversial, where your passions find a voice. Discuss issues, explore solutions, and dive into endless conversation."
               iconComponent={<Gavel className="activities-icon" />}
             />
@@ -272,6 +230,16 @@ function Home() {
             />
           </IconContext.Provider>
         </section>
+        <div className="learn-more-about-club-activities-article-call-to-action-section">
+          <button className="link-to-club-activities-article">
+            <Link
+              style={{ color: "whitesmoke" }}
+              to="/uniondispatch/articles/4"
+            >
+              <span>Click to Learn More</span>
+            </Link>
+          </button>
+        </div>
         <section
           style={{ backgroundImage: `url(${UnionDispatchImage})` }}
           className="homepage-the-union-dispatch-blurb"
@@ -292,14 +260,70 @@ function Home() {
                 <h4>Accessing The Union Dispatch</h4>
                 <p className="accessing-the-union-dispatch-text">
                   Click on the icon{" "}
-                  <Article
-                    className="accessing-the-union-dispatch-text-icon"
-                    size={48}
-                  />{" "}
+                  <Link to="/uniondispatch/">
+                    <Article
+                      className="accessing-the-union-dispatch-text-icon"
+                      size={48}
+                    />
+                  </Link>{" "}
                   shown on the navbar to go to The Union Dispatch
                 </p>
               </div>
             </div>
+          </div>
+        </section>
+        {/* Meet the Executive Board */}
+        <section className="meet-the-exec-board">
+          <h1 className="meet-the-exec-board-heading">
+            Meet the Executive Board
+          </h1>
+          <p className="meet-the-exec-blurb">
+            Welcome to the Expressive Arts Union! As the executive board, we
+            work behind the scenes to organize events, support member projects,
+            and foster a community where everyone’s creativity can shine. We
+            bring together artists, writers, designers, and performers, offering
+            them a platform to learn, share, and showcase their talents and also
+            deal with publishing members’ work, we’re here to inspire and grow
+            our club’s creative spirit. Join us as we bring ideas to life!
+          </p>
+          <div className="exec-members">
+            <ExecMember
+              name="Chebeni Musundi"
+              title="President"
+              caption="You can't look at a glass half full or empty if it's
+                overflowing"
+              image={ChebeniExecutiveBoardPicture}
+            />
+            <ExecMember
+              name="Harsh Patel"
+              title="Vice President"
+              caption="When I wrote the code for the website, only God and I understood. Now only God knows"
+              image={HarshExecutiveBoardPicture}
+            />
+            <ExecMember
+              name="Keval Patel"
+              title="Coordinator"
+              caption="Life is relative; it's all about perspective"
+              image={KevalExecutiveBoardPicture}
+            />
+            <ExecMember
+              name="Arya Bejwalkar"
+              title="Club Advisor"
+              caption="When you want something, all the universe conspires in helping you achieve it"
+              image={AryaExecutiveBoardPicture}
+            />
+            <ExecMember
+              name="Joan Mukami"
+              title="Secretary"
+              caption="Sure it could be hard, but look at the alternative if we do nothing"
+              image={JoanExecutiveBoardPicture}
+            />
+            {/* <ExecMember
+              name="Amrit Metha"
+              title="Head of Film / Media Director"
+              caption=""
+              image={}
+            /> */}
           </div>
         </section>
         <Footer />
