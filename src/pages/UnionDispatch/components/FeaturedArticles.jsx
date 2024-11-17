@@ -1,7 +1,7 @@
 import { UserCircle } from "@phosphor-icons/react";
 import PropTypes from "prop-types";
 
-function HeroSection(props) {
+function FeaturedArticle(props) {
   return (
     <section
       style={{ backgroundImage: `url(${props.image})` }}
@@ -22,9 +22,9 @@ function HeroSection(props) {
   );
 }
 
-export default HeroSection;
+export default FeaturedArticle;
 
-HeroSection.propTypes = {
+FeaturedArticle.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
