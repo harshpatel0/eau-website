@@ -40,9 +40,12 @@ td {
 }
 
 .markdown-generated-image {
-  width: 75%;
+  width: 30vh;
   background-size: center;
-  margin: 0 10%;
+  display: flex;
+  justify-self: center;
+  padding-left: 4rem;
+  padding-right: 4rem;
 
   background-attachment: fixed;
   background-position: center;
