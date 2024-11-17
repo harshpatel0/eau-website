@@ -45,7 +45,9 @@ function Home() {
   const [quote, setQuote] = useState("");
   const [quoteCaption, setQuoteCaption] = useState("");
 
-  const [frontpageFeature, setFrontPageFeature] = useState("");
+  const [frontpageFeature, setFrontPageFeature] = useState(
+    "Loading Today's Message of the Day"
+  );
   const [loadingDone, setLoadingDone] = useState(false);
 
   // Get Front Page Feature
@@ -61,13 +63,16 @@ function Home() {
       });
   }
 
-  useEffect(() => {
-    if ((frontpageFeature != "") & (quote != "")) {
-      setTimeout(() => {
-        setLoadingDone(true);
-      }, 1000);
-    }
-  }, [frontpageFeature, quote]);
+  // useEffect(() => {
+  //   if (
+  //     (frontpageFeature != "Loading Today's Message of the Day") &
+  //     (quote != "")
+  //   ) {
+  //     setTimeout(() => {
+  //       setLoadingDone(true);
+  //     }, 1000);
+  //   }
+  // }, [frontpageFeature, quote]);
 
   function getRandomInteger() {
     return Math.floor(Math.random() * (quotes.length - 0));
@@ -90,11 +95,6 @@ function Home() {
 
   return (
     <>
-      <LoadingScreen
-        done={loadingDone}
-        loadingText="Welcome to the Expressive Arts Union"
-        loadingSubText="We are getting the site ready for you."
-      />
       <NavBar />
       <Heading
         headerText="Expressive Arts Union"
@@ -231,14 +231,13 @@ function Home() {
           </IconContext.Provider>
         </section>
         <div className="learn-more-about-club-activities-article-call-to-action-section">
-          <button className="link-to-club-activities-article">
-            <Link
-              style={{ color: "whitesmoke" }}
-              to="/uniondispatch/articles/4"
-            >
-              <span>Click to Learn More</span>
-            </Link>
-          </button>
+          <Link to="/uniondispatch/articles/4">
+            <button className="link-to-club-activities-article">
+              <span style={{ color: darkMode ? "whitesmoke" : "black" }}>
+                Click to Learn More
+              </span>
+            </button>
+          </Link>
         </div>
         <section
           style={{ backgroundImage: `url(${UnionDispatchImage})` }}
