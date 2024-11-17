@@ -116,10 +116,8 @@
 .club-activities-header {
   text-align: center;
   display: flex;
-  justify-content: center;
-  width: 100%;
+  justify-self: center;
   padding-top: 1rem;
-  padding-left: 4rem;
 }
 
 .activities {
@@ -171,13 +169,19 @@
 }
 
 .link-to-club-activities-article {
-  color: white;
+  color: black;
   padding: 1rem;
   display: flex;
   justify-self: center;
   border-radius: 20px;
   font-size: 1rem;
+  border: 2px solid var(--eau-purple);
+  background-color: transparent;
+}
+
+.link-to-club-activities-article:hover {
   background-color: var(--eau-purple);
+  color: whitesmoke;
 }
 
 .homepage-the-union-dispatch-blurb {
