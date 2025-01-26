@@ -67,6 +67,12 @@ function MarkdownRenderer(props) {
             const { node, ...rest } = props;
             return <img className="markdown-generated-image" {...rest} />;
           },
+
+          hr(props) {
+            const { node, ...rest } = props;
+            return <hr className="markdown-generated-hr" {...rest} />;
+          },
+
           a(props) {
             const { node, ...rest } = props;
             return (
