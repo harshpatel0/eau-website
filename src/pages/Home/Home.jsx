@@ -36,7 +36,7 @@ import JoanExecutiveBoardPicture from "../../assets/exec_images/joan.png";
 import KevalExecutiveBoardPicture from "../../assets/exec_images/keval.png";
 
 import { apiBaseUrl } from "../../veryglobalvars.js";
-import { quotes } from "./quotes.js";
+import { quotes as quotesFromFile } from "./quotes.js";
 
 import "./Home.css";
 
@@ -48,7 +48,10 @@ function Home() {
   const [frontpageFeature, setFrontPageFeature] = useState(
     "Loading Today's Message of the Day"
   );
-  const [loadingDone, setLoadingDone] = useState(false);
+  const [quotes, setQuotes] = useState([]);
+  const [quoteLoaded, setQuoteLoaded] = useState(false);
+
+  // const [loadingDone, setLoadingDone] = useState(false);
 
   // Get Front Page Feature
 
@@ -60,6 +63,22 @@ function Home() {
       })
       .catch(function (error) {
         console.log(error);
+      });
+  }
+
+  function fetchQuotes() {
+    axios
+      .get(apiBaseUrl + "/dynamiccontent/quotes")
+      .then(function (response) {
+        let quotes_json = JSON.parse(response.data[0].content);
+        console.log(quotes_json);
+        setQuotes(quotes_json);
+        setQuoteLoaded(true);
+      })
+      .catch(function (error) {
+        console.log(error);
+        setQuotes(quotesFromFile);
+        setQuoteLoaded(true);
       });
   }
 
@@ -80,8 +99,11 @@ function Home() {
 
   function chooseQuote() {
     let quoteChosen = getRandomInteger();
+    console.log(quoteChosen);
 
     let quoteObject = quotes[quoteChosen];
+    console.log(quoteChosen);
+
     setQuote(quoteObject.quote);
     setQuoteCaption(quoteObject.caption);
   }
@@ -90,8 +112,14 @@ function Home() {
     document.title = "The Expressive Arts Union";
 
     getFrontPageFeaturedText();
-    chooseQuote();
+    fetchQuotes();
   }, []);
+
+  useEffect(() => {
+    if (quoteLoaded == true) {
+      chooseQuote();
+    }
+  }, [quoteLoaded]);
 
   return (
     <>
