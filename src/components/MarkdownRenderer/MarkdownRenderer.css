@@ -53,6 +53,10 @@ td {
   background-size: cover;
 }
 
+.markdown-generated-hr {
+  margin: 2rem;
+}
+
 .markdownrenderer {
   transition: all 0.5s;
   line-height: 2;
