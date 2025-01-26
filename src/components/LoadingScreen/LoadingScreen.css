@@ -10,7 +10,7 @@
 }
 
 .fader {
-  animation: fadeaway 1.5s linear infinite;
+  animation: fadeaway 1s linear infinite;
   animation-iteration-count: 1; /* Change this to 'infinite' to loop */
   animation-fill-mode: forwards;
 }
@@ -43,6 +43,11 @@
 @keyframes fadeaway {
   0% {
     opacity: 1;
+  }
+
+  97% {
+    opacity: 0.1;
+    z-index: -1;
   }
 
   100% {
