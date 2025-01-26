@@ -10,6 +10,8 @@ import MarkdownRenderer from "../../../components/MarkdownRenderer/MarkdownRende
 import Navbar from "../../../components/Navbar/Navbar";
 import { apiBaseUrl } from "../../../veryglobalvars";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { CaretLeft } from "@phosphor-icons/react";
 
 let title = "";
 let content = ``;
@@ -54,7 +56,7 @@ function Article() {
         console.log(error);
 
         let error_status = error.response.status;
-        if ((error_status = 404)) {
+        if (error_status == 404) {
           navigate("*");
         }
       });
@@ -73,7 +75,23 @@ function Article() {
       />
 
       <Navbar />
-      <Heading headerText={title} subText={`By ${authorName}`} />
+      <Heading
+        headerText={
+          <div style={{ display: "inline-flex", cursor: "pointer" }}>
+            {/* <Link to="/uniondispatch">
+              <CaretLeft size={32} />
+            </Link> */}
+            <CaretLeft
+              onClick={() => {
+                history.back();
+              }}
+              size={32}
+            />
+            <span>{title}</span>
+          </div>
+        }
+        subText={`By ${authorName}`}
+      />
 
       <div style={{ width: "80%" }} className="rendered-article">
         <MarkdownRenderer markdownContent={content} />
