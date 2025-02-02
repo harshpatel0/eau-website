@@ -23,6 +23,8 @@ function UnionDispatch() {
   const [loadingState, setLoadingState] = useState(false);
   const [featuredArticlesData, setFeaturedArticlesData] = useState([]);
   const [isArticlePublic, setIsArticlePublic] = useState(true);
+  const [featuredArticlesTitle, setFeaturedArticlesTitle] = useState("");
+  const [featuredArticlesSubtext, setFeaturedArticlesSubtext] = useState("");
 
   const location = useLocation(); // Hook to access location changes
 
@@ -40,11 +42,37 @@ function UnionDispatch() {
       });
   }
 
+  function getFeaturedArticlesTitle() {
+    axios
+      .get(apiBaseUrl + "/dynamiccontent/featured_articles_title")
+      .then(function (response) {
+        let res = response.data[0].content;
+        setFeaturedArticlesTitle(res);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+  function getFeaturedArticlesSubtext() {
+    axios
+      .get(apiBaseUrl + "/dynamiccontent/featured_articles_subtext")
+      .then(function (response) {
+        let res = response.data[0].content;
+        console.log(res);
+
+        setFeaturedArticlesSubtext(res);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
   const page_title = "The Union Dispatch";
 
   useEffect(() => {
-    console.log("Initial Code Running");
     document.title = page_title;
+    getFeaturedArticlesTitle();
+    getFeaturedArticlesSubtext();
     getArticleData();
   }, [location]);
 
@@ -53,7 +81,10 @@ function UnionDispatch() {
     <>
       <Navbar darkMode={darkMode} toggleTheme={toggleTheme} />
       <Heading
-        headerText={inFeaturedArticles ? "Featured Articles" : "All Articles"}
+        headerText={
+          inFeaturedArticles ? `${featuredArticlesTitle}` : "All Articles"
+        }
+        subText={inFeaturedArticles ? `${featuredArticlesSubtext}` : ""}
         inFeaturedArticles={inFeaturedArticles}
         darkMode={darkMode}
         showBorderAndShadow={true}
