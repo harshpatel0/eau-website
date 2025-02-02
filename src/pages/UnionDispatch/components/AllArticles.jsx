@@ -25,6 +25,25 @@ function AllArticles(props) {
         console.log(error);
       });
   }, []);
+
+  function convertDate(timestamp) {
+    console.log("Hi!");
+    const formattedTimestamp = timestamp.substring(0, 23) + "Z";
+    let human_date = new Date(formattedTimestamp);
+
+    const humanReadable = human_date.toLocaleString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      // hour: "2-digit",
+      // minute: "2-digit",
+      // second: "2-digit",
+      // hour12: true,
+    });
+
+    return `Published on ${humanReadable}`;
+  }
   return (
     <div>
       <div style={styles} className="all-articles">
@@ -36,7 +55,16 @@ function AllArticles(props) {
                   <Link to={`/uniondispatch/articles/${article.article_id}`}>
                     <h2>{article.title}</h2>
                   </Link>
-                  <p>{article.author_name}</p>
+                  <div style={{ paddingLeft: "1rem" }}>
+                    <p style={{ marginTop: "0.25rem" }}>
+                      {article.author_name}
+                    </p>
+                    <p style={{ marginTop: "0.5rem" }}>
+                      <span style={{ color: "gray" }}>
+                        {convertDate(article.published_date)}
+                      </span>
+                    </p>
+                  </div>
                 </li>
               ) : (
                 // <li>Article Hidden</li>
