@@ -24,16 +24,11 @@ import Footer from "../../components/Footer/Footer.jsx";
 import ClubActivities from "./components/ClubActivities.jsx";
 import ExecMember from "./components/ExecMember.jsx";
 import MarkdownRenderer from "../../components/MarkdownRenderer/MarkdownRenderer";
-import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
+// import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
 
 // Assets
 import HeroImage from "../../assets/images/pexels-anete-lusina-6331086.webp";
 import UnionDispatchImage from "../../assets/images/single-earth-ApivzPERunU-unsplash.webp";
-import AryaExecutiveBoardPicture from "../../assets/exec_images/arya.png";
-import ChebeniExecutiveBoardPicture from "../../assets/exec_images/chebeni.png";
-import HarshExecutiveBoardPicture from "../../assets/exec_images/harsh.png";
-import JoanExecutiveBoardPicture from "../../assets/exec_images/joan.png";
-import KevalExecutiveBoardPicture from "../../assets/exec_images/keval.png";
 
 import { apiBaseUrl } from "../../veryglobalvars.js";
 import { quotes as quotesFromFile } from "./quotes.js";
@@ -41,7 +36,7 @@ import { quotes as quotesFromFile } from "./quotes.js";
 import "./Home.css";
 
 function Home() {
-  const { darkMode, toggleTheme } = useContext(DarkModeContext);
+  const { darkMode, _ } = useContext(DarkModeContext);
   const [quote, setQuote] = useState("");
   const [quoteCaption, setQuoteCaption] = useState("");
 
@@ -319,31 +314,31 @@ function Home() {
               title="President"
               caption="You can't look at a glass half full or empty if it's
                 overflowing"
-              image={ChebeniExecutiveBoardPicture}
+              image={"/assets/exec_images/chebeni.png"}
             />
             <ExecMember
               name="Harsh Patel"
               title="Vice President"
               caption="When I wrote the code for the website, only God and I understood. Now only God knows"
-              image={HarshExecutiveBoardPicture}
+              image={"/assets/exec_images/harsh.png"}
             />
             <ExecMember
               name="Keval Patel"
               title="Coordinator"
               caption="Life is relative; it's all about perspective"
-              image={KevalExecutiveBoardPicture}
+              image={"/assets/exec_images/keval.png"}
             />
             <ExecMember
               name="Arya Bejwalkar"
               title="Club Advisor"
               caption="When you want something, all the universe conspires in helping you achieve it"
-              image={AryaExecutiveBoardPicture}
+              image={"/assets/exec_images/arya.png"}
             />
             <ExecMember
               name="Joan Mukami"
               title="Secretary"
               caption="Sure it could be hard, but look at the alternative if we do nothing"
-              image={JoanExecutiveBoardPicture}
+              image={"/assets/exec_images/joan.png"}
             />
             {/* <ExecMember
               name="Amrit Metha"
