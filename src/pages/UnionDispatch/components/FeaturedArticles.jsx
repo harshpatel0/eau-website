@@ -9,7 +9,7 @@ function FeaturedArticle(props) {
     >
       <h1 className="hero-text hero-link">Click to read</h1>
       <p className="hero-text hero-p">{props.title}</p>
-      <p className="hero-text hero-author">
+      <p style={{ display: "inline-flex" }} className="hero-text hero-author">
         <UserCircle
           style={({ textAlign: "center" }, { marginRight: "10px" })}
           weight="bold"
