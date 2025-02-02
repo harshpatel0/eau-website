@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
 import { useInView } from "react-intersection-observer";
 
@@ -22,7 +22,7 @@ function UnionDispatch() {
   const { darkMode, toggleTheme } = useContext(DarkModeContext);
   const [loadingState, setLoadingState] = useState(false);
   const [featuredArticlesData, setFeaturedArticlesData] = useState([]);
-  const [isArticlePublic, setIsArticlePublic] = useState(true);
+  // const [isArticlePublic, setIsArticlePublic] = useState(true);
   const [featuredArticlesTitle, setFeaturedArticlesTitle] = useState("");
   const [featuredArticlesSubtext, setFeaturedArticlesSubtext] = useState("");
 
@@ -101,10 +101,7 @@ function UnionDispatch() {
                 to={`/uniondispatch/articles/${article.article_id}`}
                 key={article.article_id}
               >
-                <div
-                  key={article.article_id}
-                  onClick={() => handleArticleClick(article.article_id)}
-                >
+                <div key={article.article_id}>
                   <FeaturedArticle
                     title={article.title}
                     author={article.author_name}
