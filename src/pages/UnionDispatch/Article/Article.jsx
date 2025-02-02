@@ -10,24 +10,13 @@ import MarkdownRenderer from "../../../components/MarkdownRenderer/MarkdownRende
 import Navbar from "../../../components/Navbar/Navbar";
 import { apiBaseUrl } from "../../../veryglobalvars";
 import axios from "axios";
-import { Link } from "react-router-dom";
 import { CaretLeft } from "@phosphor-icons/react";
-
-let title = "";
-let content = ``;
-
-let authorName = "";
-let tagline = ``;
-
-let email = "";
-
-let doesArticleExist = true;
 
 function Article() {
   const { articleId } = useParams();
   const navigate = useNavigate();
 
-  const [articleControls, setArticleControls] = useState({});
+  // const [articleControls, setArticleControls] = useState({});
   const [loadingState, setLoadingState] = useState(false);
 
   const [title, setTitle] = useState("");
