@@ -24,6 +24,7 @@ function Article() {
   const [authorName, setAuthorName] = useState("");
   const [tagline, setTagline] = useState(``);
   const [email, setEmail] = useState("");
+  const [timestamp, setTimestamp] = useState("");
 
   // Get Data from Db
   useEffect(() => {
@@ -38,6 +39,7 @@ function Article() {
         setContent(data.content);
         setTagline(data.tagline);
         setEmail(data.email);
+        setTimestamp(data.published_date);
 
         setLoadingState(true);
       })
@@ -50,6 +52,25 @@ function Article() {
         }
       });
   }, []);
+
+  function showDate(timestamp) {
+    console.log(timestamp);
+    const formattedTimestamp = timestamp.substring(0, 23) + "Z";
+    let human_date = new Date(formattedTimestamp);
+
+    const humanReadable = human_date.toLocaleString("en-US", {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    });
+
+    return `Published on ${humanReadable}`;
+  }
 
   useEffect(() => {
     document.title = title;
@@ -90,6 +111,9 @@ function Article() {
           <strong>By {authorName}</strong>
           <MarkdownRenderer markdownContent={tagline} />
         </blockquote>
+        <p style={({ color: "gray" }, { paddingTop: "1rem" })}>
+          {showDate(timestamp)}
+        </p>
       </div>
       <Footer />
     </>
