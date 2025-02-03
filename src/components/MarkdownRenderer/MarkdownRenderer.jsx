@@ -5,12 +5,11 @@ import rehypeRaw from "rehype-raw";
 import rehypeKatex from "rehype-katex";
 import rehypeSanitize from "rehype-sanitize";
 import remarkMath from "remark-math";
-import "katex/dist/katex.min.css";
 
 import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
 
 import "./MarkdownRenderer.css";
-import rehypeRaw from "rehype-raw";
+import "./katex.min.css";
 
 // Documentation: https://www.npmjs.com/package/react-markdown
 function MarkdownRenderer(props) {
@@ -92,7 +91,7 @@ function MarkdownRenderer(props) {
           },
         }}
         remarkPlugins={[remarkGfm, remarkMath]}
-        rehypePlugins={[rehypeRaw, rehypeSanitize]}
+        rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeKatex]}
       >
         {props.markdownContent}
         {/* {markdownContent} */}
