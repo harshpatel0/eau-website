@@ -34,9 +34,9 @@ function Heading(props) {
   };
 
   return (
-    <div style={styles} className="location-heading">
-      <h1 className="heading-text">{props.headerText}</h1>
-      <p className="heading-subtext" style={{ fontSize: "1.1rem" }}>
+    <div style={styles} className="location-heading no-print">
+      <h1 className="heading-text no-print">{props.headerText}</h1>
+      <p className="heading-subtext no-print" style={{ fontSize: "1.1rem" }}>
         {props.subText}
       </p>
     </div>

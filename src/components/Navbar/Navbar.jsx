@@ -24,7 +24,7 @@ function Navbar(props) {
           ? "blur(100px) brightness(70%)"
           : "blur(100px) brightness(90%)",
       }}
-      className="navbar"
+      className="navbar no-print"
     >
       <IconContext.Provider
         value={{

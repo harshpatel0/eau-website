@@ -14,7 +14,7 @@ function LoadingScreen(props) {
   }, [props.done]);
 
   return (
-    <div id="loading-screen" className="loading-screen">
+    <div id="loading-screen" className="loading-screen no-print">
       <div className="loading-content">
         <div>
           <CircleNotch

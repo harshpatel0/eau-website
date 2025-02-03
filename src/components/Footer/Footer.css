@@ -20,3 +20,9 @@
     display: block;
   }
 }
+
+@media print {
+  .printing-footer-content {
+    display: block !important;
+  }
+}

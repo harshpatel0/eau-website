@@ -3,6 +3,8 @@
   margin-left: 4rem;
   margin-right: 1rem;
 
+  width: 85%;
+
   display: flex;
   justify-self: center;
 }
@@ -21,5 +23,30 @@
     display: block;
     margin-left: 6rem;
     padding-right: 1rem;
+  }
+}
+
+@media print {
+  .rendered-article {
+    margin-top: 1rem !important;
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+
+    text-align: justify;
+
+    width: 100%;
+
+    display: flex;
+    justify-self: center;
+
+    color: black !important;
+  }
+
+  .after-markdown-render {
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    margin-right: 2rem;
+
+    padding-bottom: 2rem;
   }
 }

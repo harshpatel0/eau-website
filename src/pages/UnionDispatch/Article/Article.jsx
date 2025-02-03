@@ -63,9 +63,9 @@ function Article() {
       year: "numeric",
       month: "long",
       day: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
+      // hour: "2-digit",
+      // minute: "2-digit",
+      // second: "2-digit",
       hour12: true,
     });
 
@@ -103,7 +103,7 @@ function Article() {
         subText={`By ${authorName}`}
       />
 
-      <div style={{ width: "80%" }} className="rendered-article">
+      <div className="rendered-article">
         <MarkdownRenderer markdownContent={content} />
       </div>
       <div className="after-markdown-render">

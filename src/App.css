@@ -27,6 +27,13 @@
   color: transparent;
 }
 
+@media print {
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+}
+
 /* Adding Glacial Interdifference Font Family */
 /* @font-face {
   font-family: "Glacial Interdifference";
