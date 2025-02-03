@@ -11,18 +11,6 @@ function Footer() {
 
   return (
     <>
-      {/* Printing Footer */}
-      <footer
-        style={{ backgroundColor: darkMode ? "#282828" : "#D3D3D3" }}
-        className="footer"
-      >
-        <div style={{ display: "none" }} className="printing-footer-content">
-          <h3>Printed from The Union Dispatch</h3>
-          <h4>The Expressive Arts Union</h4>
-          <a href={websiteUrl}>{websiteUrl}</a>
-        </div>
-      </footer>
-
       <footer
         style={{ backgroundColor: darkMode ? "#282828" : "#D3D3D3" }}
         className="footer no-print"
@@ -56,6 +44,18 @@ function Footer() {
               </a>
             </p>
           </div>
+        </div>
+      </footer>
+
+      {/* Printing Footer */}
+      <footer
+        style={{ backgroundColor: darkMode ? "#282828" : "#D3D3D3" }}
+        className="footer"
+      >
+        <div style={{ display: "none" }} className="printing-footer-content">
+          <h3>Printed from The Union Dispatch</h3>
+          <h4>The Expressive Arts Union</h4>
+          {/* <a href={websiteUrl}>{websiteUrl}</a> */}
         </div>
       </footer>
     </>
