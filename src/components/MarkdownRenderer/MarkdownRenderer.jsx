@@ -1,17 +1,21 @@
 import { useContext } from "react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+import rehypeKatex from "rehype-katex";
+import rehypeSanitize from "rehype-sanitize";
+import remarkMath from "remark-math";
+import "katex/dist/katex.min.css";
 
 import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
 
 import "./MarkdownRenderer.css";
+import rehypeRaw from "rehype-raw";
 
 // Documentation: https://www.npmjs.com/package/react-markdown
 function MarkdownRenderer(props) {
   // Props: Title, author, authortagline, markdowncontent, date
   const { darkMode, toggleTheme } = useContext(DarkModeContext);
-
-  const markdown = "# Hi *Pluto*!";
 
   return (
     <div className="markdownrenderer">
@@ -87,7 +91,8 @@ function MarkdownRenderer(props) {
             );
           },
         }}
-        remarkPlugins={[remarkGfm]}
+        remarkPlugins={[remarkGfm, remarkMath]}
+        rehypePlugins={[rehypeRaw, rehypeSanitize]}
       >
         {props.markdownContent}
         {/* {markdownContent} */}
