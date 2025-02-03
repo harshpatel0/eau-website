@@ -91,7 +91,7 @@ function MarkdownRenderer(props) {
           },
         }}
         remarkPlugins={[remarkGfm, remarkMath]}
-        rehypePlugins={[rehypeRaw, rehypeSanitize, rehypeKatex]}
+        rehypePlugins={[rehypeRaw, rehypeKatex]}
       >
         {props.markdownContent}
         {/* {markdownContent} */}
