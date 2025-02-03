@@ -8,7 +8,6 @@ import { apiBaseUrl } from "../../../veryglobalvars";
 
 function AllArticles(props) {
   const [articles, setArticles] = useState([]);
-  const [isArticlePublic, setIsArticlePublic] = useState(true);
   let styles = {
     backgroundColor: props.darkMode ? "#1f1f1fff" : "whitesmoke",
     color: props.darkMode ? "whitesmoke" : "#1f1f1fff",
