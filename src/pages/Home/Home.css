@@ -301,8 +301,8 @@
 
 .exec-member:hover {
   border-top: 2px solid var(--eau-purple);
-  margin: 0.75rem;
-  padding: 0.75rem;
+  margin: 0.35rem;
+  padding: 0.35rem;
 }
 
 .meet-the-exec-board-picture {
