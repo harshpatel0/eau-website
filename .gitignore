@@ -27,3 +27,6 @@ package-lock.json
 package-lock.json
 public/assets/article_images/
 public/assets/exec_images/
+
+# This is from another branch
+public/assets/media/
