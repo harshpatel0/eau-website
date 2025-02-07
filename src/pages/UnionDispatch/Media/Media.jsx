@@ -40,7 +40,7 @@ function Media() {
         setTagline(data.tagline);
         setEmail(data.email);
         setTimestamp(data.published_date);
-        setMediaAltText(data.mediaAltText);
+        setMediaAltText(data.alt_text);
 
         setLoadingState(true);
       })
