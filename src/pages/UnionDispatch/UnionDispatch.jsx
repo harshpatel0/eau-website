@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
 import { useInView } from "react-intersection-observer";
@@ -27,6 +27,7 @@ function UnionDispatch() {
   const [featuredArticlesSubtext, setFeaturedArticlesSubtext] = useState("");
 
   const location = useLocation(); // Hook to access location changes
+  const navigate = useNavigate();
 
   function getArticleData() {
     axios
@@ -35,10 +36,17 @@ function UnionDispatch() {
         setFeaturedArticlesData(response.data);
         setTimeout(() => {
           setLoadingState(true);
-        }, 2000);
+        }, 600);
       })
       .catch(function (error) {
         console.log(error);
+        navigate("*", {
+          state: {
+            error_code: error.code,
+            error_message: error.message,
+            error_status: error.status,
+          },
+        });
       });
   }
 
@@ -51,6 +59,13 @@ function UnionDispatch() {
       })
       .catch(function (error) {
         console.log(error);
+        navigate("*", {
+          state: {
+            error_code: error.code,
+            error_message: error.message,
+            error_status: error.status,
+          },
+        });
       });
   }
   function getFeaturedArticlesSubtext() {
@@ -64,6 +79,13 @@ function UnionDispatch() {
       })
       .catch(function (error) {
         console.log(error);
+        navigate("*", {
+          state: {
+            error_code: error.code,
+            error_message: error.message,
+            error_status: error.status,
+          },
+        });
       });
   }
 
