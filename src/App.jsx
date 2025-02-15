@@ -9,6 +9,7 @@ import Article from "./pages/UnionDispatch/Article/Article.jsx";
 import Media from "./pages/UnionDispatch/Media/Media.jsx";
 import TestPage from "./pages/UnionDispatch/TestPage.jsx";
 
+import NotFound from "./pages/Error/NotFound.jsx";
 import Error from "./pages/Error/Error.jsx";
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
           element={<Article />}
         />
         <Route path="/uniondispatch/media/:mediaId" element={<Media />} />
-        <Route path="*" element={<Error />} />
+        <Route path="/error" element={<Error />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
