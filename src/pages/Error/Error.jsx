@@ -4,6 +4,7 @@ import Footer from "../../components/Footer/Footer";
 
 import "./Error.css";
 import AnActualError from "./AnActualError.webp";
+import SpongebobLost from "./SpongebobLost.webp";
 
 import { useEffect, useState } from "react";
 
@@ -11,6 +12,8 @@ import { Link, useLocation } from "react-router-dom";
 
 function Error() {
   const location = useLocation();
+
+  console.log(location.state);
 
   const [errorHeading, setErrorHeading] = useState(
     "It's us, not you, we tried to get the data the server, but the server left us on delivered."
@@ -33,6 +36,11 @@ function Error() {
         `The server encountered an error whilst it was processing your request, please let us know about this error through the email (use the icon on the top right corner) and send over these error details.`
       );
     }
+
+    if (location.state?.error_status == "404") {
+      setErrorHeading("We couldn't find what you asked for");
+      setErrorMessage(`Check the URL to ensure it is correct`);
+    }
   }
 
   useEffect(() => {
@@ -45,11 +53,15 @@ function Error() {
       <Heading headerText="An Error Occured" />
       <div className="error-page-content">
         <div>
-          <img
-            src={AnActualError}
-            width={"200px"}
-            alt="Probably what's going on there."
-          />
+          {location.state?.error_status == "404" ? (
+            <img src={SpongebobLost} width={"200px"} alt="" />
+          ) : (
+            <img
+              src={AnActualError}
+              width={"200px"}
+              alt="Probably what's going on there."
+            />
+          )}
           <h1>An Error Occured</h1>
           <h2>{errorHeading}</h2>
           <p>{errorMessage}</p>
@@ -63,6 +75,7 @@ function Error() {
             <div className="error-message">
               <p>Error Code: {location.state?.error_code}</p>
               <p>Error Message: {location.state?.error_message}</p>
+              <p>HTTP Status: {location.state?.error_status}</p>
             </div>
           )}
         </div>
