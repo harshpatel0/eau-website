@@ -1,3 +1,5 @@
+// import makeRequest from "../../components/requester.js";
+
 // Libararies
 import {
   Article,
@@ -11,9 +13,10 @@ import {
   Pencil,
   Presentation,
   VinylRecord,
+  PaperPlaneTilt,
 } from "@phosphor-icons/react";
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { DarkModeContext } from "../../contexts/DarkModeContext.jsx";
 import axios from "axios";
 
@@ -40,6 +43,8 @@ function Home() {
   const [quote, setQuote] = useState("");
   const [quoteCaption, setQuoteCaption] = useState("");
 
+  const navigate = useNavigate();
+
   const [frontpageFeature, setFrontPageFeature] = useState(
     "Loading Today's Message of the Day"
   );
@@ -58,6 +63,20 @@ function Home() {
       })
       .catch(function (error) {
         console.log(error);
+
+        setFrontPageFeature(
+          `## It's us, not you\nWe couldn't get the Message of the Day from the server, please try again later, if it persists, let us know via the email through the Email icon on the top right corner of the page, and send these error details to us\n\nError Code: ${error.code}; Error Message: ${error.message}`
+        );
+        if (error.code == "ERR_NETWORK") {
+          setFrontPageFeature(
+            `## We lost connection to the EAU\nPlease check your internet connection before retrying, otherwise features such as The Union Dispatch will not work as it requires an active connection to the EAU`
+          );
+        }
+        if (error.code == "500") {
+          setFrontPageFeature(
+            `## It's us, not you\nThe server encountered an error whilst it was processing your request, please let us know about this error through the email (use the icon on the top right corner) and send over these error details\n\nError Code: ${error.code}; Error Message: ${error.message}\nError Location: "frontpagefeature"`
+          );
+        }
       });
   }
 
@@ -66,7 +85,6 @@ function Home() {
       .get(apiBaseUrl + "/dynamiccontent/quotes")
       .then(function (response) {
         let quotes_json = JSON.parse(response.data[0].content);
-        console.log(quotes_json);
         setQuotes(quotes_json);
         setQuoteLoaded(true);
       })
@@ -139,6 +157,12 @@ function Home() {
             <div className="homepage-hero-bar">
               <h1>Expressive Arts Union</h1>
               <div className="homepage-hero-bar-socials">
+                <a href="https://forms.gle/ij8jYJipxDRyx9GJ7" target="_blank">
+                  <PaperPlaneTilt
+                    alt="Submit an article"
+                    className="homepage-hero-bar-socials-icons"
+                  />
+                </a>
                 <a
                   href="https://www.instagram.com/expressiveartsunion/"
                   target="_blank"
