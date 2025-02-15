@@ -115,6 +115,7 @@
 
 .club-activities-header {
   text-align: center;
+  margin-left: 4rem;
   display: flex;
   justify-self: center;
   padding-top: 1rem;
@@ -166,6 +167,7 @@
   padding-left: 4rem;
   padding-right: 4rem;
   padding-bottom: 2rem;
+  margin-left: 4rem;
 }
 
 .link-to-club-activities-article {
