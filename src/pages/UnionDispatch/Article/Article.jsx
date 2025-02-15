@@ -48,7 +48,13 @@ function Article() {
 
         let error_status = error.response.status;
         if (error_status == 404) {
-          navigate("*");
+          navigate("*", {
+            state: {
+              error_code: error.code,
+              error_message: error.message,
+              error_status: 404,
+            },
+          });
         }
       });
   }, []);
