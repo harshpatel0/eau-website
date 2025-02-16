@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 import AllArticles from "./components/AllArticles.jsx";
 import Heading from "../../components/Heading/Heading.jsx";
-import FeaturedArticle from "./components/FeaturedArticles.jsx";
+import FeaturedDisplay from "../components/FeaturedDisplay.jsx";
 import LoadingScreen from "../../components/LoadingScreen/LoadingScreen.jsx";
 import Navbar from "../../components/Navbar/Navbar.jsx";
 
@@ -124,7 +124,7 @@ function UnionDispatch() {
                 key={article.article_id}
               >
                 <div key={article.article_id}>
-                  <FeaturedArticle
+                  <FeaturedDisplay
                     title={article.title}
                     author={article.author_name}
                     image={article.image_url}
