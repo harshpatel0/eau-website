@@ -29,7 +29,7 @@ function UnionDispatch() {
   const location = useLocation(); // Hook to access location changes
   const navigate = useNavigate();
 
-  function getArticleData() {
+  function getFeaturedArticleData() {
     axios
       .get(apiBaseUrl + "/articles/featured")
       .then(function (response) {
@@ -73,8 +73,6 @@ function UnionDispatch() {
       .get(apiBaseUrl + "/dynamiccontent/featured_articles_subtext")
       .then(function (response) {
         let res = response.data[0].content;
-        console.log(res);
-
         setFeaturedArticlesSubtext(res);
       })
       .catch(function (error) {
@@ -95,7 +93,7 @@ function UnionDispatch() {
     document.title = page_title;
     getFeaturedArticlesTitle();
     getFeaturedArticlesSubtext();
-    getArticleData();
+    getFeaturedArticleData();
   }, [location]);
 
   // This state variable is used to tell if the hero sections are visible, if all hero sections are not visible anymore, then we will set it to false
