@@ -20,7 +20,7 @@ function App() {
           path="/uniondispatch/articles/:articleId"
           element={<Article />}
         />
-        <Route path="/uniondispatch/media/:mediaId" element={<Media />} />
+        <Route path="/unionmuseum/media/:mediaId" element={<Media />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </>
