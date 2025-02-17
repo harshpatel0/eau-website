@@ -73,8 +73,6 @@ function UnionDispatch() {
       .get(apiBaseUrl + "/dynamiccontent/featured_articles_subtext")
       .then(function (response) {
         let res = response.data[0].content;
-        console.log(res);
-
         setFeaturedArticlesSubtext(res);
       })
       .catch(function (error) {

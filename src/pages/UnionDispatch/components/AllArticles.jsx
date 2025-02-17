@@ -26,7 +26,6 @@ function AllArticles(props) {
   }, []);
 
   function convertDate(timestamp) {
-    console.log("Hi!");
     const formattedTimestamp = timestamp.substring(0, 23) + "Z";
     let human_date = new Date(formattedTimestamp);
 
