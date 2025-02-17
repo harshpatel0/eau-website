@@ -1,5 +1,4 @@
 // Libraries
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 // Pages
@@ -8,7 +7,6 @@ import UnionDispatch from "./pages/UnionDispatch/UnionDispatch.jsx";
 import Article from "./pages/UnionDispatch/Article/Article.jsx";
 import Media from "./pages/UnionDispatch/Media/Media.jsx";
 import TestPage from "./pages/UnionDispatch/TestPage.jsx";
-
 import Error from "./pages/Error/Error.jsx";
 
 function App() {
