@@ -41,6 +41,11 @@ function Error() {
       setErrorHeading("We couldn't find what you asked for");
       setErrorMessage(`Check the URL to ensure it is correct`);
     }
+
+    if (location.state?.error_code == null {
+      setErrorHeading("")
+      setErrorMessage("You're not supposed to be here are you?")
+    }
   }
 
   useEffect(() => {
@@ -66,18 +71,11 @@ function Error() {
           <h2>{errorHeading}</h2>
           <p>{errorMessage}</p>
           <Link to="/">Back to Home</Link>
-          {location.state?.error_code == null ? (
-            <p>
-              Hey, we know you came here illegally, it&#39;s fine, you will
-              atleast get to see how errors are displayed here
-            </p>
-          ) : (
-            <div className="error-message">
-              <p>Error Code: {location.state?.error_code}</p>
-              <p>Error Message: {location.state?.error_message}</p>
-              <p>HTTP Status: {location.state?.error_status}</p>
-            </div>
-          )}
+          <div className="error-message">
+            <p>Error Code: {location.state?.error_code}</p>
+            <p>Error Message: {location.state?.error_message}</p>
+            <p>HTTP Status: {location.state?.error_status}</p>
+          </div>
         </div>
       </div>
       <Footer />
