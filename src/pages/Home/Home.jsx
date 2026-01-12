@@ -334,42 +334,11 @@ function Home() {
           </p>
           <div className="exec-members">
             <ExecMember
-              name="Chebeni Musundi"
-              title="President"
-              caption="You can't look at a glass half full or empty if it's
-                overflowing"
-              image={"/assets/exec_images/chebeni.png"}
+              name="Exec Member"
+              title="Title"
+              caption="Caption"
+              image={"/assets/exec_images/person.png"}
             />
-            <ExecMember
-              name="Harsh Patel"
-              title="Vice President"
-              caption="When I wrote the code for the website, only God and I understood. Now only God knows"
-              image={"/assets/exec_images/harsh.png"}
-            />
-            <ExecMember
-              name="Keval Patel"
-              title="Coordinator"
-              caption="Life is relative; it's all about perspective"
-              image={"/assets/exec_images/keval.png"}
-            />
-            <ExecMember
-              name="Arya Bejwalkar"
-              title="Club Advisor"
-              caption="When you want something, all the universe conspires in helping you achieve it"
-              image={"/assets/exec_images/arya.png"}
-            />
-            <ExecMember
-              name="Joan Mukami"
-              title="Secretary"
-              caption="Sure it could be hard, but look at the alternative if we do nothing"
-              image={"/assets/exec_images/joan.png"}
-            />
-            {/* <ExecMember
-              name="Amrit Metha"
-              title="Head of Film / Media Director"
-              caption=""
-              image={}
-            /> */}
           </div>
         </section>
         <Footer />
